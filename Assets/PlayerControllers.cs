@@ -76,11 +76,11 @@ public class PlayerControllers : MonoBehaviour {
         if(timeFloat>0)
             scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
         ThisTransform.localScale = scaleSize ;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Jump"))
         {
             ThisRB.isKinematic = true; 
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && StopMotion) {
+        else if (Input.GetButtonUp("Jump") && StopMotion) {
             ThisRB.isKinematic = false; 
             ThisRB.AddForce(transform.right * shootingSpeed);
         }
@@ -96,7 +96,7 @@ public class PlayerControllers : MonoBehaviour {
         else
             targetArrow.SetActive(false);
 
-        if (Input.GetKeyDown(KeyCode.Space) && StopMotion == false)
+        if (Input.GetButtonDown("Jump") && StopMotion == false)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 

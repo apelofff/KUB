@@ -19,6 +19,8 @@ public class CameraShake : MonoBehaviour {
     public float smoothingSpeed = 0.125f;
     public Vector3 offset;
 
+    //Takk for støtten tommas, digger at du følger med!
+
     public GameObject GAmeOVer;
     public GameObject Victory;
 
@@ -34,6 +36,7 @@ public class CameraShake : MonoBehaviour {
         Vector3 desierdPosition = targetPlayer.position + offset;
         Vector3 smoothedPostion = Vector3.Lerp(transform.position, desierdPosition, smoothingSpeed);
         transform.position = smoothedPostion;
+
 
     }
 
