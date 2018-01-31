@@ -59,13 +59,16 @@ public class PlayerControllers : MonoBehaviour {
 
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
-        //slowMotion = GetComponent<SlowMotion>();
-        
-       
-        Invoke("Littlejump", 1f);
-        
+        ThisRB.isKinematic = true;
 
-	}
+
+        //slowMotion = GetComponent<SlowMotion>();
+
+
+        //Invoke("Littlejump", 1f);
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -76,19 +79,24 @@ public class PlayerControllers : MonoBehaviour {
         if(timeFloat>0)
             scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
         ThisTransform.localScale = scaleSize ;
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && ID == 1)
         {
             ThisRB.isKinematic = true; 
         }
-        else if (Input.GetButtonUp("Jump") && StopMotion) {
+        else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
             ThisRB.isKinematic = false; 
             ThisRB.AddForce(transform.right * shootingSpeed);
         }
-        //_____________________________________________________________
+
+        if (Input.GetButtonDown("Jump") && ID == 0)
+        {
+            Littlejump();
+        }
+            //_____________________________________________________________
 
 
-        // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true)
+            // SlowMotion state, and aiming state
+            if (ThisRB.isKinematic == true && StopMotion == true && ID == 1)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
@@ -96,14 +104,10 @@ public class PlayerControllers : MonoBehaviour {
         else
             targetArrow.SetActive(false);
 
-        if (Input.GetButtonDown("Jump") && StopMotion == false)
+        if (Input.GetButtonDown("Jump") && StopMotion == false && ID == 1)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-
     }
    
-
-
     public void OnTriggerEnter(Collider other)
     {
         
@@ -128,9 +132,13 @@ public class PlayerControllers : MonoBehaviour {
 
     void Littlejump()
     {
+     
         ThisRB.AddForce(transform.up * shootingSpeed);
         StopMotion = true;
         // slowMotion.slowDownActive = true; 
+
+        ID = 1;
+
     }
 
 }

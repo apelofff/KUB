@@ -818,7 +818,7 @@ MonoBehaviour:
   shouldShake: 0
   targetPlayer: {fileID: 654490859}
   smoothingSpeed: 0.125
-  offset: {x: 0, y: 3, z: -20}
+  offset: {x: 0, y: 3, z: -30}
   GAmeOVer: {fileID: 1382222696}
   Victory: {fileID: 0}
 --- !u!1 &434514212
@@ -983,8 +983,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516768804}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -55.502823, y: -2.7715178, z: -83.62619}
-  m_LocalScale: {x: 68.21261, y: 1, z: 1}
+  m_LocalPosition: {x: -55.5, y: 16.57, z: -83.62619}
+  m_LocalScale: {x: 29.527243, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 975933489}
   m_RootOrder: 14
@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownActive: 0
-  slowDownFactor: 0.1
+  slowDownFactor: 0.5
   slowDownLength: 2
 --- !u!1 &776813493
 GameObject:
@@ -2511,8 +2511,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1538278234}
   m_LocalRotation: {x: -0, y: -0, z: 0.16197713, w: 0.98679453}
-  m_LocalPosition: {x: 48.76718, y: 16.738483, z: -83.88205}
-  m_LocalScale: {x: 199.51964, y: 7.4153304, z: 1}
+  m_LocalPosition: {x: 77.02, y: 26.93, z: -83.88205}
+  m_LocalScale: {x: 139.46109, y: 6.1773086, z: 1}
   m_Children: []
   m_Father: {fileID: 975933489}
   m_RootOrder: 12
