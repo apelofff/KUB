@@ -127,7 +127,9 @@ public class PlayerControllers : MonoBehaviour {
         if(other.tag == "Dead")
         {
             cameraShake.shouldShake = true;
-            StopMotion = false; 
+            StopMotion = false;
+            ThisRB.isKinematic = true;
+
         }
     }
 
