@@ -60,6 +60,7 @@ public class PlayerControllers : MonoBehaviour {
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
         ThisRB.isKinematic = true;
+        transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
 
 
         //slowMotion = GetComponent<SlowMotion>();
