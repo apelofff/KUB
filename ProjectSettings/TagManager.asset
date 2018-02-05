@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dead
+  - portal
+  - portal_1
+  - portal_2
+  - portal_3
   layers:
   - Default
   - TransparentFX
