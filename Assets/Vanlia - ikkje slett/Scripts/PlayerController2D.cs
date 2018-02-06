@@ -82,17 +82,19 @@ public class PlayerController2D : MonoBehaviour
         // This is for the scaling down over time
 
         timeFloat -= Time.deltaTime;
-        if (timeFloat > 0)
+       /* if (timeFloat > 0)
             scaleSize = new Vector2(timeFloat / scaleDecrease, timeFloat / scaleDecrease);
-        ThisTransform.localScale = scaleSize;
+        ThisTransform.localScale = scaleSize;*/
         if (Input.GetButton("Jump") && ID == 1)
         {
-            ThisRB.isKinematic = true;
+            ThisRB.constraints = RigidbodyConstraints2D.FreezePosition;
+
         }
-        else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1)
+
+        if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1)
         {
-            ThisRB.isKinematic = false;
-            ThisRB.AddForce(transform.right * shootingSpeed);
+            ThisRB.constraints = RigidbodyConstraints2D.None;
+            Littlejump();
         }
 
         if (Input.GetButtonDown("Jump") && ID == 0)

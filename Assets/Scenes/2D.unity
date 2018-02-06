@@ -228,12 +228,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77ad5b75ef3da8e41a478324202c987d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a933c80771f8fd4a83b2c44f5d4024d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 4.2, y: 4.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -245,8 +245,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 398397822}
   m_LocalRotation: {x: -0, y: -0, z: 0.71379626, w: 0.70035344}
-  m_LocalPosition: {x: -0.03000021, y: 2.4400003, z: 0}
-  m_LocalScale: {x: 0.95000017, y: 0.32296976, z: 1}
+  m_LocalPosition: {x: 4.1, y: 0.33, z: 0}
+  m_LocalScale: {x: 0.14566855, y: 0.7524276, z: 3.3523476}
   m_Children: []
   m_Father: {fileID: 1156195578}
   m_RootOrder: 0
@@ -405,12 +405,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77ad5b75ef3da8e41a478324202c987d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a933c80771f8fd4a83b2c44f5d4024d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 4.2, y: 4.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 920322840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.12, y: 1.58, z: -39.416763}
-  m_LocalScale: {x: 15.366256, y: 0.32296976, z: 1}
+  m_LocalScale: {x: 61.66625, y: 0.32296976, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -444,8 +444,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 4.2, y: 4.2}
+    newSize: {x: 4.2, y: 4.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -462,13 +462,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1156195578}
   - component: {fileID: 1156195577}
-  - component: {fileID: 1156195579}
   - component: {fileID: 1156195576}
   - component: {fileID: 1156195575}
   - component: {fileID: 1156195574}
   - component: {fileID: 1156195573}
+  - component: {fileID: 1156195579}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,18 +541,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010482073, y: -0.0058496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 4.2, y: 4.2}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 4.1847634, y: 4.205874}
   m_EdgeRadius: 0
 --- !u!212 &1156195577
 SpriteRenderer:
@@ -588,12 +588,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77ad5b75ef3da8e41a478324202c987d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a933c80771f8fd4a83b2c44f5d4024d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -620,10 +620,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1156195572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29944c1eced33534fa8b38cdbd2d3ff9, type: 3}
+  m_Script: {fileID: 11500000, guid: 15288184afcbb2e48ac5921b8aa7fd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingSpeed: 1
+  shootingSpeed: 1000
   ThisTransform: {fileID: 1156195578}
   ThisRB: {fileID: 1156195575}
   newRot: {x: 0.08715574, y: 0, z: 0, w: 0.9961947}
@@ -635,8 +635,7 @@ MonoBehaviour:
   timeFloat: 120
   targetArrow: {fileID: 398397822}
   otherPlayer: {fileID: 0}
-  slowMotion: {fileID: 0}
-  cameraShake: {fileID: 0}
-  isAlive: 0
+  slowMotion: {fileID: 1156195573}
+  cameraShake: {fileID: 857931203}
   gameobjects: []
   StopMotion: 0

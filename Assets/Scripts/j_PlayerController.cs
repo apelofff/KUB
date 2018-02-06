@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SlowMotion))]
 [RequireComponent(typeof(CameraShake))]
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -41,11 +41,14 @@ public class j_PlayerController : MonoBehaviour {
     [Header("Juicy")]
     public SlowMotion slowMotion;
     public CameraShake cameraShake;
+    private bool ShouldShake;
     public bool isAlive;
 
 
     [Header("Players")]
     public GameObject[] gameobjects;
+
+    
 
 
     [SerializeField] bool StopMotion = false;
@@ -63,36 +66,34 @@ public class j_PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+        ShouldShake = cameraShake.shouldShake;
         myState = PlayerStates.start;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-
-
         print(myState);
-
-        if           (myState == PlayerStates.rotating)                { rotating(); }
-        else if      (myState == PlayerStates.flying)                  { flying(); }
-        else if      (myState == PlayerStates.dead_collision)          { dead_collision(); }
-
-
-        // This is for the scaling down over time
-
+        if           (myState == PlayerStates.start)                   { start();            }
+        else if      (myState == PlayerStates.rotating)                { rotating();         }
+        else if      (myState == PlayerStates.flying)                  { flying();           }
+        else if      (myState == PlayerStates.dead_collision)          { dead_collision();   }
+        else if      (myState == PlayerStates.dead_projectile)         { dead_projectile();  }
+        else if      (myState == PlayerStates.dead_electro)            { dead_electro();     }
+        else if      (myState == PlayerStates.dead_fire)               { dead_fire();        } 
+        
         timeFloat -= Time.deltaTime;
         if (timeFloat > 0)
 
+
         if (Input.GetButton("Jump"))
-        {
-            
+        {  
             myState = PlayerStates.rotating;
         }
 
         else if (Input.GetButtonUp("Jump"))
         {
-                myState = PlayerStates.flying;
-                ThisRB.constraints = 0;
+                myState = PlayerStates.flying;     
         }
     }
 
@@ -101,43 +102,29 @@ public class j_PlayerController : MonoBehaviour {
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody2D>();
         ThisRB.isKinematic = true;
+        ThisRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
     }
 
+//________________________________________________________________________________________________________________________________________________________________
+// Ulike måter å dø på via collisions. UI og lyder må oppdatere for å passe ka vi faktisk kolliderer med. 
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Normal_Obstacle" && myState == PlayerStates.rotating || myState == PlayerStates.flying)
-        {
-            myState = PlayerStates.dead_collision;
-            Debug.LogWarning("To tight buddy");
-            //Play audio;
-        }
+        if      (col.tag == "Normal_Obstacle" && myState == PlayerStates.rotating || myState == PlayerStates.flying)  { myState = PlayerStates.dead_collision;  }
 
-        else if (col.tag == "Projectile" && myState == PlayerStates.rotating || myState == PlayerStates.flying)
-        {
-            myState = PlayerStates.dead_projectile;
-            Debug.Log("You shot me dooown, but i get uuup");
-            //Play audio;
-        }
+        else if (col.tag == "Projectile" && myState == PlayerStates.rotating || myState == PlayerStates.flying)       { myState = PlayerStates.dead_projectile; }
 
-        else if (col.tag == "fire" && myState == PlayerStates.rotating || myState == PlayerStates.flying)
-        {
-            myState = PlayerStates.dead_fire;
-            Debug.Log("Burn baby burn!");
-            //Play audio;
-        }
+        else if (col.tag == "fire" && myState == PlayerStates.rotating || myState == PlayerStates.flying)             { myState = PlayerStates.dead_fire;       }
 
-        else if (col.tag == "electro" && myState == PlayerStates.rotating || myState == PlayerStates.flying)
-        {
-            myState = PlayerStates.dead_electro;
-            Debug.Log("Burn baby burn!");
-            //Play audio;
-        }
+        else if (col.tag == "electro" && myState == PlayerStates.rotating || myState == PlayerStates.flying)          { myState = PlayerStates.dead_electro;    }
+
     }
+    //____________________________________________________________________________________________________________________________________________________________
+    // Ulike states. Hva som skjer står inni, men de blir kallet fra FSM. 
 
     void rotating()
     {
-        ThisRB.isKinematic = true;
         targetArrow.SetActive(true);
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         ThisRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
@@ -146,7 +133,6 @@ public class j_PlayerController : MonoBehaviour {
     void flying()
     {
         targetArrow.SetActive(false);
-        ThisRB.isKinematic = false;
         ThisRB.AddForce(transform.up * shootingSpeed, ForceMode2D.Impulse);
         ThisRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         // slowMotion.slowDownActive = true;
@@ -155,15 +141,20 @@ public class j_PlayerController : MonoBehaviour {
     void dead_collision()
     {
         targetArrow.SetActive(false);
+
         cameraShake.shouldShake = true;
 
+        Debug.LogWarning("To tight buddy");
+
+        //Play audio;
+
         ThisRB.isKinematic = true;
+
         //Update DeathCounter
         
         //Update UI
 
         //Play Sound
-
 
         isAlive = false;
 
@@ -171,8 +162,32 @@ public class j_PlayerController : MonoBehaviour {
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+    }
 
-       
+    void dead_projectile()
+    {
+        ThisRB.isKinematic = true;
+        //Update DeathCounter
+        Debug.Log("You shot me dooown, but i get uuup");
+        //Play audio;
+    }
+
+    void dead_electro()
+    {
+        ThisRB.isKinematic = true;
+        //Update DeathCounter
+        cameraShake.shouldShake = true;
+        Debug.Log("Burn baby burn!");
+        //Play audio;
+    }
+
+    void dead_fire()
+    {
+        ThisRB.isKinematic = true;
+        //Update DeathCounter
+        cameraShake.shouldShake = true;
+        Debug.Log("Burn baby burn!");
+        //Play audio;
     }
 
 
