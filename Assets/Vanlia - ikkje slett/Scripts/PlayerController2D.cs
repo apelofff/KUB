@@ -93,7 +93,6 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1)
         {
-            ThisRB.constraints = RigidbodyConstraints2D.None;
             Littlejump();
         }
 

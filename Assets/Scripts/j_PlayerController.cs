@@ -44,6 +44,8 @@ public class j_PlayerController : MonoBehaviour {
     private bool ShouldShake;
     public bool isAlive;
 
+    private Vector2 CurrentPos;
+
 
     [Header("Players")]
     public GameObject[] gameobjects;
@@ -70,9 +72,10 @@ public class j_PlayerController : MonoBehaviour {
         ShouldShake = cameraShake.shouldShake;
         myState = PlayerStates.start;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
         print(myState);
         if           (myState == PlayerStates.start)                   { start();            }
         else if      (myState == PlayerStates.rotating)                { rotating();         }
@@ -80,8 +83,12 @@ public class j_PlayerController : MonoBehaviour {
         else if      (myState == PlayerStates.dead_collision)          { dead_collision();   }
         else if      (myState == PlayerStates.dead_projectile)         { dead_projectile();  }
         else if      (myState == PlayerStates.dead_electro)            { dead_electro();     }
-        else if      (myState == PlayerStates.dead_fire)               { dead_fire();        } 
-        
+        else if      (myState == PlayerStates.dead_fire)               { dead_fire();        }
+        CurrentPos = transform.position;
+
+
+        print(ThisRB.velocity);
+
         timeFloat -= Time.deltaTime;
         if (timeFloat > 0)
 
@@ -93,7 +100,7 @@ public class j_PlayerController : MonoBehaviour {
 
         else if (Input.GetButtonUp("Jump"))
         {
-                myState = PlayerStates.flying;     
+            myState = PlayerStates.flying;
         }
     }
 
@@ -101,9 +108,8 @@ public class j_PlayerController : MonoBehaviour {
     {
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody2D>();
-        ThisRB.isKinematic = true;
-        ThisRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+        myState = PlayerStates.rotating;
     }
 
 //________________________________________________________________________________________________________________________________________________________________
@@ -127,24 +133,26 @@ public class j_PlayerController : MonoBehaviour {
     {
         targetArrow.SetActive(true);
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-        ThisRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        /*ThisRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;*/
+        transform.position = CurrentPos;
     }
 
-    void flying()
+    IEnumerator flying()
     {
-        targetArrow.SetActive(false);
-        ThisRB.AddForce(transform.up * shootingSpeed, ForceMode2D.Impulse);
-        ThisRB.constraints = RigidbodyConstraints2D.FreezeRotation;
-        // slowMotion.slowDownActive = true;
+       
+    targetArrow.SetActive(false);
+    ThisRB.AddForce(transform.up * shootingSpeed);
+    // slowMotion.slowDownActive = true;
+    yield return null;
     }
 
     void dead_collision()
     {
-        targetArrow.SetActive(false);
+         targetArrow.SetActive(false);
 
         cameraShake.shouldShake = true;
 
-        Debug.LogWarning("To tight buddy");
+        Debug.LogWarning("Too tight buddy");
 
         //Play audio;
 
@@ -156,12 +164,11 @@ public class j_PlayerController : MonoBehaviour {
 
         //Play Sound
 
-        isAlive = false;
-
-        if (Input.GetButtonDown("Jump") && isAlive ==false)
+        if (Input.GetButtonDown("Jump"))
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+
     }
 
     void dead_projectile()
@@ -170,6 +177,10 @@ public class j_PlayerController : MonoBehaviour {
         //Update DeathCounter
         Debug.Log("You shot me dooown, but i get uuup");
         //Play audio;
+        if (Input.GetButtonDown("Jump"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     void dead_electro()
@@ -179,6 +190,10 @@ public class j_PlayerController : MonoBehaviour {
         cameraShake.shouldShake = true;
         Debug.Log("Burn baby burn!");
         //Play audio;
+        if (Input.GetButtonDown("Jump"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     void dead_fire()
@@ -188,6 +203,10 @@ public class j_PlayerController : MonoBehaviour {
         cameraShake.shouldShake = true;
         Debug.Log("Burn baby burn!");
         //Play audio;
+        if (Input.GetButtonDown("Jump"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
 
