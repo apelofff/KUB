@@ -12,13 +12,14 @@ public class T_HighScoreSystem : MonoBehaviour {
     private void Start()
     {
 
-        HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+      //  HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 
     }
 
     public void SettingTheHighSCore()
-    { 
-
+    {
+        LocalTime += Time.deltaTime;
+        Debug.Log(LocalTime);
 
     }
 
