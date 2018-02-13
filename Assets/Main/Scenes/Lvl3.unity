@@ -689,7 +689,7 @@ MonoBehaviour:
   slowDownTime: 1
   shouldShake: 0
   targetPlayer: {fileID: 1292719305}
-  smoothingSpeed: 0.225
+  smoothingSpeed: 0.125
   offset: {x: 0, y: 0, z: -47}
   GAmeOVer: {fileID: 0}
   Victory: {fileID: 0}

@@ -23,7 +23,7 @@ public class ActivateRotation : MonoBehaviour {
     {
         if (RotChanger.tag == "RotationChange")
         {
-            timeLeft = 30;
+            timeLeft = 5;
         }
     }
 }

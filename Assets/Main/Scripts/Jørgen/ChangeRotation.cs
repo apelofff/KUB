@@ -31,16 +31,20 @@ public class ChangeRotation : MonoBehaviour {
         {
             rotationScript.enabled = false;
             normalScript.enabled = true;
-
+            used = true;
         }
 
-        else if(timeLefft > 0)
+        else if(timeLefft > 0 && used == false)
         {
             rotationScript.enabled = true;
             normalScript.enabled = false;
-            gameObject.SetActive(false);
             GetComponent<MeshRenderer>().enabled = false;
-            used = true;
+            
+        }
+
+        if (timeLefft == -1)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
