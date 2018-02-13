@@ -117,7 +117,7 @@ public class PlayerControllers : MonoBehaviour {
         else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && rotatateDirection == false)
         {
             targetArrow.SetActive(true);
-            transform.Rotate(0, 0, Time.deltaTime * -rotationSpeedZ);
+            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         }
 
         else
