@@ -1192,6 +1192,66 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   portalCounter: 0
   isInTrigger: 0
+<<<<<<< HEAD:Assets/Main/Scenes/Level 3.unity
+=======
+--- !u!4 &1398432952
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976352101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.2, y: 0, z: 0}
+  m_LocalScale: {x: 1.4593678, y: 1.4593674, z: 1.4593674}
+  m_Children:
+  - {fileID: 1096727538}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1405174587
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.974464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.251387
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 16.59375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705186996624258, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8157c2c603d879b4095b1c949fcb25ca, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> e2702d014ae865f0db123c6f76c607aab57d8b2a:Assets/Scenes/Level 3.unity
 --- !u!1 &1413640589
 GameObject:
   m_ObjectHideFlags: 0
