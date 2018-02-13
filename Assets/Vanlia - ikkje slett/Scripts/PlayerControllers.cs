@@ -57,6 +57,7 @@ public class PlayerControllers : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         rotatateDirection = true;
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
