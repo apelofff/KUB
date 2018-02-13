@@ -57,6 +57,9 @@ public class PlayerControllers : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
+        rotatateDirection = true;
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
         ThisRB.isKinematic = true;
@@ -104,6 +107,13 @@ public class PlayerControllers : MonoBehaviour {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         }
+
+        else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && rotatateDirection == false)
+        {
+            targetArrow.SetActive(true);
+            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+        }
+
 
         else
             targetArrow.SetActive(false);
