@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SlowMotion))]
 [RequireComponent(typeof(CameraShake))]
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Transform))]
-[RequireComponent(typeof(BoxCollider2D))]
 
 
 
@@ -23,14 +22,12 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private Rigidbody2D ThisRB = null;
     [SerializeField] private Quaternion newRot = Quaternion.Euler(10f, 0f, 0f);
 
-
-    [SerializeField] private bool switching = false;
-
     [Header("Other cube properties")]
     [SerializeField]
-    private Vector2 scaleSize;
+    private Vector3 scaleSize;
     [SerializeField] public Vector3 decreasingValue;
     public float rotationSpeedZ = 1f;
+    public bool rotatateDirection;
 
     [Header("For Scaling over time")]
     public float scaleDecrease;
@@ -60,7 +57,7 @@ public class PlayerController2D : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        rotatateDirection = true;
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody2D>();
         ThisRB.isKinematic = true;
@@ -82,18 +79,18 @@ public class PlayerController2D : MonoBehaviour
         // This is for the scaling down over time
 
         timeFloat -= Time.deltaTime;
-       /* if (timeFloat > 0)
-            scaleSize = new Vector2(timeFloat / scaleDecrease, timeFloat / scaleDecrease);
-        ThisTransform.localScale = scaleSize;*/
+        if (timeFloat > 0)
+            scaleSize = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
+        ThisTransform.localScale = scaleSize;
         if (Input.GetButton("Jump") && ID == 1)
         {
             ThisRB.constraints = RigidbodyConstraints2D.FreezePosition;
-
         }
-
-        if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1)
+        else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1 && rotatateDirection == true)
         {
-            Littlejump();
+            ThisRB.constraints = RigidbodyConstraints2D.None;
+            ThisRB.AddForce(transform.right * shootingSpeed);
+            rotatateDirection = false;
         }
 
         if (Input.GetButtonDown("Jump") && ID == 0)
@@ -104,11 +101,18 @@ public class PlayerController2D : MonoBehaviour
 
 
         // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1)
+        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && rotatateDirection == true)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         }
+
+        else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && rotatateDirection == false)
+        {
+            targetArrow.SetActive(true);
+            transform.Rotate(0, 0, Time.deltaTime * -rotationSpeedZ);
+        }
+
         else
             targetArrow.SetActive(false);
 

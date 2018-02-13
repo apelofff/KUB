@@ -1,9 +1,0 @@
-diff a/Assets/PlayerControllers.cs b/Assets/PlayerControllers.cs	(rejected hunks)
-@@ -127,6 +127,7 @@
-         if(other.tag == "Dead")
-         {
-             cameraShake.shouldShake = true;
-+            StopMotion = false;
-             ThisRB.isKinematic = true;
- 
-         }
