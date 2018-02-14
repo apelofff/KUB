@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoseGravity : MonoBehaviour {
+public class J_LoseGravity : MonoBehaviour {
 
 
 	void Start ()
