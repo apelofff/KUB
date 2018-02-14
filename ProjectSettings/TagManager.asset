@@ -10,6 +10,8 @@ TagManager:
   - portal_2
   - portal_3
   - Normal_Obstacle
+  - RotationChange
+  - antiGravity
   layers:
   - Default
   - TransparentFX
