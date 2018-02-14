@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 public class T_HighScoreSystem : MonoBehaviour {
 
-    public Text TimeScore;
     public Text HighScore;
-    public float LocalTime; 
+    public float LocalTime;
 
     private void Start()
     {
 
-      //  HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
 
+    private void Update()
+    {
+        LocalTime =+ Time.deltaTime;
+        HighScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     public void SettingTheHighSCore()
     {
-        LocalTime += Time.deltaTime;
+
         Debug.Log(LocalTime);
 
     }
