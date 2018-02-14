@@ -28,7 +28,9 @@ public class PlayerControllers : MonoBehaviour {
     [SerializeField]private Vector3 scaleSize ;
     [SerializeField]public Vector3 decreasingValue;
     public float rotationSpeedZ = 1f;
-    public bool rotatateDirection;
+    public bool RotationOposite = false;
+    public float rotationTimer;
+
 
     [Header("For Scaling over time")]
     public float scaleDecrease;
@@ -56,10 +58,8 @@ public class PlayerControllers : MonoBehaviour {
     
 
 	// Use this for initialization
-	void Start () {
-
-
-        rotatateDirection = true;
+	void Start ()
+    {
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
         ThisRB.isKinematic = true;
@@ -80,7 +80,8 @@ public class PlayerControllers : MonoBehaviour {
         // This is for the scaling down over time
 
         timeFloat -= Time.deltaTime;
-        if(timeFloat>0)
+        rotationTimer -= Time.deltaTime;
+        if (timeFloat>0)
             scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
         ThisTransform.localScale = scaleSize ;
         if (Input.GetButton("Jump") && ID == 1)
@@ -91,30 +92,35 @@ public class PlayerControllers : MonoBehaviour {
         else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
             ThisRB.isKinematic = false; 
             ThisRB.AddForce(transform.right * shootingSpeed);
-            rotatateDirection = false;
         }
 
-        if (Input.GetButtonDown("Jump") && ID == 0)
+        if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == false)
         {
             Littlejump();
+            RotationOposite = true;
         }
+
+        /*else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
+        {
+            RotationOposite = false;
+        }*/
+
+        //ChangeRotation();
         //_____________________________________________________________
 
 
         // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1)
+        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == false)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         }
 
-        else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && rotatateDirection == false)
+        /*else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
             targetArrow.SetActive(true);
-            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-        }
-
-
+            transform.Rotate(0, 0, Time.deltaTime * -rotationSpeedZ);
+        }*/
         else
             targetArrow.SetActive(false);
 
@@ -144,7 +150,21 @@ public class PlayerControllers : MonoBehaviour {
             ThisRB.isKinematic = true;
 
         }
+
+        if(other.tag == "RotationChange" && RotationOposite == false)
+        {
+            rotationTimer = 10;
+            RotationOposite = true;
+        }
     }
+
+    /*void ChangeRotation()
+    {
+        if (rotationTimer == 0)
+        {
+            RotationOposite = false;
+        }
+    }*/
 
     void Littlejump()
     {
