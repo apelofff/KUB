@@ -100,10 +100,10 @@ public class PlayerControllers : MonoBehaviour {
             RotationOposite = true;
         }
 
-        /*else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
+        else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
         {
             RotationOposite = false;
-        }*/
+        }
 
         //ChangeRotation();
         //_____________________________________________________________
@@ -116,11 +116,11 @@ public class PlayerControllers : MonoBehaviour {
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
         }
 
-        /*else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
+        else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
             targetArrow.SetActive(true);
-            transform.Rotate(0, 0, Time.deltaTime * -rotationSpeedZ);
-        }*/
+            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+        }
         else
             targetArrow.SetActive(false);
 
