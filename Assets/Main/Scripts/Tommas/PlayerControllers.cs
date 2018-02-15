@@ -110,7 +110,7 @@ public class PlayerControllers : MonoBehaviour {
 
 
         // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == false)
+        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 /*&& RotationOposite == false*/)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
