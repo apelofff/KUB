@@ -38,7 +38,7 @@ public class PlayerControllers : MonoBehaviour {
 
     [Header("Objects outside the game")]
     public GameObject targetArrow;
-    public Transform otherPlayer; 
+        
 
     [Header("Juicy")]
     public SlowMotion slowMotion;
@@ -50,6 +50,7 @@ public class PlayerControllers : MonoBehaviour {
 
 
     [SerializeField] bool StopMotion = false;
+    public T_HighScoreSystem TimeScore; 
 
     
     // proppeling the player foward using rb or the transform
@@ -125,7 +126,10 @@ public class PlayerControllers : MonoBehaviour {
             targetArrow.SetActive(false);
 
         if (Input.GetButtonDown("Jump") && StopMotion == false && ID == 1)
+        {
+            TimeScore.IsTimerOn = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
    
     public void OnTriggerEnter(Collider other)
@@ -145,6 +149,7 @@ public class PlayerControllers : MonoBehaviour {
 
         if(other.tag == "Dead")
         {
+            TimeScore.OnDeath();
             cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;

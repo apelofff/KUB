@@ -59,8 +59,6 @@ GameObject:
   - component: {fileID: 114276757006608298}
   - component: {fileID: 114500759048899592}
   - component: {fileID: 114972660398198886}
-  - component: {fileID: 114839653975426534}
-  - component: {fileID: 114641393007514594}
   - component: {fileID: 114821255357435532}
   m_Layer: 0
   m_Name: Player v.2
@@ -274,7 +272,8 @@ MonoBehaviour:
   scaleSize: {x: 0, y: 0, z: 0}
   decreasingValue: {x: 0, y: 0, z: 0}
   rotationSpeedZ: 360
-  rotatateDirection: 0
+  RotationOposite: 0
+  rotationTimer: 0
   scaleDecrease: 60
   timeFloat: 120
   targetArrow: {fileID: 1541298214873552}
@@ -304,19 +303,6 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   GAmeOVer: {fileID: 0}
   Victory: {fileID: 0}
---- !u!114 &114641393007514594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1977468657591640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a901096b28e5e4ebb3e3b939628cd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationChanger: {fileID: 0}
-  timeLeft: 0
 --- !u!114 &114821255357435532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,34 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c7a8248213d5641b64f924a1e24bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114839653975426534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1977468657591640}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99932fd8091bbb44abe987fdf6abde39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingSpeed: 1000
-  ThisTransform: {fileID: 4900277193119420}
-  ThisRB: {fileID: 54098119543129034}
-  newRot: {x: 0.08715574, y: 0, z: 0, w: 0.9961947}
-  switching: 0
-  scaleSize: {x: 0, y: 0, z: 0}
-  decreasingValue: {x: 0, y: 0, z: 0}
-  rotationSpeedZ: 360
-  rotatateDirection: 0
-  scaleDecrease: 0
-  timeFloat: 120
-  targetArrow: {fileID: 1541298214873552}
-  otherPlayer: {fileID: 0}
-  slowMotion: {fileID: 114972660398198886}
-  cameraShake: {fileID: 0}
-  gameobjects: []
-  StopMotion: 0
 --- !u!114 &114972660398198886
 MonoBehaviour:
   m_ObjectHideFlags: 1

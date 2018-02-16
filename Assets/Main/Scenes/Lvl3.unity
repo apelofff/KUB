@@ -532,11 +532,11 @@ MonoBehaviour:
   scaleDecrease: 60
   timeFloat: 120
   targetArrow: {fileID: 1720110694}
-  otherPlayer: {fileID: 0}
   slowMotion: {fileID: 0}
   cameraShake: {fileID: 1912374612}
   gameobjects: []
   StopMotion: 0
+  TimeScore: {fileID: 0}
 --- !u!54 &1292719302
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -713,8 +713,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6918a6b22d3ef04fb2b64bd82860b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighScore: {fileID: 1714231011}
-  LocalTime: 0
+  currentTimeOnThisLevel: 1
+  deathAmount: 0
+  IsTimerOn: 0
+  GameOverText: {fileID: 0}
+  text: {fileID: 0}
+  Highscore: {fileID: 0}
+  Deathcounter: {fileID: 0}
+  DevResetNBThisWillResetAll: 0
+  controlingTime: 1
 --- !u!1 &1567974766
 GameObject:
   m_ObjectHideFlags: 0

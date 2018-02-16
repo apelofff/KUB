@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+[RequireComponent(typeof(GameObject))]
+
 public class T_HighScoreSystem : MonoBehaviour {
 
     [SerializeField] private float currentTimeOnThisLevel = 1 ;
@@ -20,51 +22,64 @@ public class T_HighScoreSystem : MonoBehaviour {
   
     private void Start()
     {
-
-        Highscore.text = PlayerPrefs.GetFloat("Highscore", 1).ToString();
+        IsTimerOn = true;
+        Highscore.text = PlayerPrefs.GetFloat("Highscore").ToString();
         Deathcounter.text = PlayerPrefs.GetInt("Deathcounter",deathAmount).ToString();
         deathAmount = PlayerPrefs.GetInt("Deathcounter", deathAmount);
-    
+        currentTimeOnThisLevel = 0;
+
     }
     
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Space))
-        {    
-            deathAmount++;
-        }
-        if (deathAmount >= PlayerPrefs.GetInt("Deathcounter",deathAmount))
+
+        if (DevResetNBThisWillResetAll == true)
         {
-            Deathcounter.text = deathAmount.ToString();
-            PlayerPrefs.SetInt("Deathcounter", deathAmount);
-            
+            DevResetNBThisWillResetAll = false;
+            PlayerPrefs.DeleteAll();
+            //Highscore.ToString;
         }
 
-        
+
+
 
         if (IsTimerOn == true)
         {
-            currentTimeOnThisLevel = controlingTime + Time.timeSinceLevelLoad;
-            currentTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
-            text.text = currentTimeOnThisLevel.ToString();
+            currentTimeOnThisLevel += Time.deltaTime; 
+           float RoundedTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
+            text.text = RoundedTimeOnThisLevel.ToString();
 
-            if (currentTimeOnThisLevel <= PlayerPrefs.GetFloat("Highscore", 1))
-            {
-                PlayerPrefs.SetFloat("Highscore", currentTimeOnThisLevel);
-                Highscore.text = currentTimeOnThisLevel.ToString();
-            }
-            else if (IsTimerOn == false)
-                currentTimeOnThisLevel = 0; 
         }
     }
 
-    public void Reset()
+    private void SetHighScore()
     {
-        if(DevResetNBThisWillResetAll == true)
+        IsTimerOn = false;
+        float RoundedTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
+
+        if (RoundedTimeOnThisLevel <= PlayerPrefs.GetFloat("Highscore"))
         {
-            PlayerPrefs.DeleteAll();
-            //Highscore.ToString;
+            PlayerPrefs.SetFloat("Highscore", RoundedTimeOnThisLevel);
+            Highscore.text = RoundedTimeOnThisLevel.ToString();
+        }
+ 
+         currentTimeOnThisLevel = 0;
+
+    }
+
+   
+    public void OnDeath()
+    {
+        SetHighScore();
+
+        GameOverText.SetActive(true);
+        deathAmount++;
+
+        if (deathAmount >= PlayerPrefs.GetInt("Deathcounter", deathAmount))
+        {
+            Deathcounter.text = deathAmount.ToString();
+            PlayerPrefs.SetInt("Deathcounter", deathAmount);
+
         }
     }
 }
