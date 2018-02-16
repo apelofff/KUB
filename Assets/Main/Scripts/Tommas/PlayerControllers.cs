@@ -50,6 +50,7 @@ public class PlayerControllers : MonoBehaviour {
 
 
     [SerializeField] bool StopMotion = false;
+    public T_HighScoreSystem TimeScore; 
 
     
     // proppeling the player foward using rb or the transform
@@ -148,6 +149,7 @@ public class PlayerControllers : MonoBehaviour {
             cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;
+            TimeScore.SetHighScore();
 
         }
 
