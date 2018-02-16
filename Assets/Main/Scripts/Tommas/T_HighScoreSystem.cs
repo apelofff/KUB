@@ -21,10 +21,11 @@ public class T_HighScoreSystem : MonoBehaviour {
     private void Start()
     {
 
-        Highscore.text = PlayerPrefs.GetFloat("Highscore", 1).ToString();
+        Highscore.text = PlayerPrefs.GetFloat("Highscore").ToString();
         Deathcounter.text = PlayerPrefs.GetInt("Deathcounter",deathAmount).ToString();
         deathAmount = PlayerPrefs.GetInt("Deathcounter", deathAmount);
-    
+        currentTimeOnThisLevel = 0;
+
     }
     
     void Update()
@@ -41,22 +42,30 @@ public class T_HighScoreSystem : MonoBehaviour {
             
         }
 
-        
+       
 
         if (IsTimerOn == true)
         {
-            currentTimeOnThisLevel = controlingTime + Time.timeSinceLevelLoad;
-            currentTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
-            text.text = currentTimeOnThisLevel.ToString();
+            currentTimeOnThisLevel += Time.deltaTime; 
+           float RoundedTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
+            text.text = RoundedTimeOnThisLevel.ToString();
 
-            if (currentTimeOnThisLevel <= PlayerPrefs.GetFloat("Highscore", 1))
-            {
-                PlayerPrefs.SetFloat("Highscore", currentTimeOnThisLevel);
-                Highscore.text = currentTimeOnThisLevel.ToString();
-            }
-            else if (IsTimerOn == false)
-                currentTimeOnThisLevel = 0; 
         }
+    }
+
+    public void SetHighScore()
+    {
+        IsTimerOn = false;
+        float RoundedTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
+
+        if (RoundedTimeOnThisLevel <= PlayerPrefs.GetFloat("Highscore"))
+        {
+            PlayerPrefs.SetFloat("Highscore", RoundedTimeOnThisLevel);
+            Highscore.text = RoundedTimeOnThisLevel.ToString();
+        }
+ 
+         currentTimeOnThisLevel = 0;
+
     }
 
     public void Reset()
