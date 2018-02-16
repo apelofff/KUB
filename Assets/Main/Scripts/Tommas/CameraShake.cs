@@ -49,7 +49,7 @@ public class CameraShake : MonoBehaviour {
             {
                 camera.localPosition = targetPlayer.transform.position + offset + Random.insideUnitSphere * power;
                 duration -= Time.deltaTime * slowDownTime;
-                GAmeOVer.SetActive(true);
+                
             }
             else
             {
