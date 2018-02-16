@@ -326,18 +326,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1378368629926608, guid: c65b2361ab46e0e4899a122d8112d9e5,
     type: 2}
   m_PrefabInternal: {fileID: 902351210}
---- !u!114 &396932994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 396932990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ef280c08a7b86449eb957f0f098ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lengthOfAnimation: 3
 --- !u!95 &396932995
 Animator:
   serializedVersion: 3
@@ -1066,18 +1054,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1378368629926608, guid: c65b2361ab46e0e4899a122d8112d9e5,
     type: 2}
   m_PrefabInternal: {fileID: 328855484}
---- !u!114 &2005713374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2005713373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ef280c08a7b86449eb957f0f098ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lengthOfAnimation: 3
 --- !u!95 &2005713375
 Animator:
   serializedVersion: 3
