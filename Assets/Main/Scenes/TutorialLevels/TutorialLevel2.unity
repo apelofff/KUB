@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae0acec1dafe946a6b02437b5789f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 2
+  levelToLoad: 3
 --- !u!23 &2013249851
 MeshRenderer:
   m_ObjectHideFlags: 0
