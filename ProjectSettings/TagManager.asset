@@ -12,6 +12,9 @@ TagManager:
   - Normal_Obstacle
   - RotationChange
   - antiGravity
+  - Gold
+  - SpecialSkin
+  - Funnyskin
   layers:
   - Default
   - TransparentFX

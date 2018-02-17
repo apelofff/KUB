@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CameraShake))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Transform))]
+[RequireComponent(typeof(T_HighScoreSystem))]
 
 
 
@@ -38,7 +39,7 @@ public class PlayerControllers : MonoBehaviour {
 
     [Header("Objects outside the game")]
     public GameObject targetArrow;
-    public Transform otherPlayer; 
+        
 
     [Header("Juicy")]
     public SlowMotion slowMotion;
@@ -126,7 +127,10 @@ public class PlayerControllers : MonoBehaviour {
             targetArrow.SetActive(false);
 
         if (Input.GetButtonDown("Jump") && StopMotion == false && ID == 1)
+        {
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
    
     public void OnTriggerEnter(Collider other)
@@ -146,10 +150,11 @@ public class PlayerControllers : MonoBehaviour {
 
         if(other.tag == "Dead")
         {
+
+            TimeScore.OnDeath();
             cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;
-            TimeScore.SetHighScore();
 
         }
 

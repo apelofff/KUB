@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+[RequireComponent(typeof(GameObject))]
+
 public class T_HighScoreSystem : MonoBehaviour {
 
     [SerializeField] private float currentTimeOnThisLevel = 1 ;
@@ -20,7 +22,7 @@ public class T_HighScoreSystem : MonoBehaviour {
   
     private void Start()
     {
-
+        IsTimerOn = true;
         Highscore.text = PlayerPrefs.GetFloat("Highscore").ToString();
         Deathcounter.text = PlayerPrefs.GetInt("Deathcounter",deathAmount).ToString();
         deathAmount = PlayerPrefs.GetInt("Deathcounter", deathAmount);
@@ -30,19 +32,16 @@ public class T_HighScoreSystem : MonoBehaviour {
     
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Space))
-        {    
-            deathAmount++;
-        }
-        if (deathAmount >= PlayerPrefs.GetInt("Deathcounter",deathAmount))
+
+        if (DevResetNBThisWillResetAll == true)
         {
-            Deathcounter.text = deathAmount.ToString();
-            PlayerPrefs.SetInt("Deathcounter", deathAmount);
-            
+            DevResetNBThisWillResetAll = false;
+            PlayerPrefs.DeleteAll();
+            //Highscore.ToString;
         }
 
-       
+
+
 
         if (IsTimerOn == true)
         {
@@ -53,7 +52,7 @@ public class T_HighScoreSystem : MonoBehaviour {
         }
     }
 
-    public void SetHighScore()
+    private void SetHighScore()
     {
         IsTimerOn = false;
         float RoundedTimeOnThisLevel = Mathf.Round(currentTimeOnThisLevel);
@@ -68,12 +67,19 @@ public class T_HighScoreSystem : MonoBehaviour {
 
     }
 
-    public void Reset()
+   
+    public void OnDeath()
     {
-        if(DevResetNBThisWillResetAll == true)
+        SetHighScore();
+
+        GameOverText.SetActive(true);
+        deathAmount++;
+
+        if (deathAmount >= PlayerPrefs.GetInt("Deathcounter", deathAmount))
         {
-            PlayerPrefs.DeleteAll();
-            //Highscore.ToString;
+            Deathcounter.text = deathAmount.ToString();
+            PlayerPrefs.SetInt("Deathcounter", deathAmount);
+
         }
     }
 }
