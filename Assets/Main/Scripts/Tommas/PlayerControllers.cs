@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CameraShake))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Transform))]
+[RequireComponent(typeof(T_HighScoreSystem))]
 
 
 
@@ -127,7 +128,7 @@ public class PlayerControllers : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && StopMotion == false && ID == 1)
         {
-            TimeScore.IsTimerOn = true;
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -149,6 +150,7 @@ public class PlayerControllers : MonoBehaviour {
 
         if(other.tag == "Dead")
         {
+
             TimeScore.OnDeath();
             cameraShake.shouldShake = true;
             StopMotion = false; 
