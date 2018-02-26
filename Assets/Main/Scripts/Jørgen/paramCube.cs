@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class paramCube : MonoBehaviour {
     public int _band;
-    public float _scaleMultiplier, _startScale;
+    public float _scaleMultiplier = 4, _startScale = 1;
 	// Use this for initialization
 	void Start () {
 		

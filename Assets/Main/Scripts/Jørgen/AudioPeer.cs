@@ -5,16 +5,31 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 
 public class AudioPeer : MonoBehaviour {
+    public static AudioPeer instance;
     AudioSource _audio;
     public static float[] _samples = new float[512];
     public static float[] _freqBand = new float[8];
 	// Use this for initialization
+
+
 	void Start () {
         _audio = GetComponent<AudioSource>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        }
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+        // Update is called once per frame
+        void Update () {
         GetSpectrumAudioSource();
         MakeFrequencyBands();
 	}

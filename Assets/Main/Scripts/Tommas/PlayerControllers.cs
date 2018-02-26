@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(T_HighScoreSystem))]
+[RequireComponent(typeof(AudioSource))]
 
 
 
@@ -39,7 +40,7 @@ public class PlayerControllers : MonoBehaviour {
 
     [Header("Objects outside the game")]
     public GameObject targetArrow;
-        
+
 
     [Header("Juicy")]
     public SlowMotion slowMotion;
@@ -66,6 +67,7 @@ public class PlayerControllers : MonoBehaviour {
         ThisRB = GetComponent<Rigidbody>();
         ThisRB.isKinematic = true;
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+        
 
 
         //slowMotion = GetComponent<SlowMotion>();
@@ -116,12 +118,14 @@ public class PlayerControllers : MonoBehaviour {
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+            FindObjectOfType<AudioManager>().Play("Rotating");
         }
 
         else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+            FindObjectOfType<AudioManager>().Play("Rotating");
         }
         else
             targetArrow.SetActive(false);
@@ -130,6 +134,7 @@ public class PlayerControllers : MonoBehaviour {
         {
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            FindObjectOfType<AudioManager>().Play("nextMap");
         }
     }
    
@@ -144,6 +149,7 @@ public class PlayerControllers : MonoBehaviour {
 
             ThisTransform.transform.position = other.transform.position;
             DestroyObject(other.gameObject);
+            
         }
 
         //________________________________________________________________________________________________________________________
@@ -155,6 +161,7 @@ public class PlayerControllers : MonoBehaviour {
             cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;
+            FindObjectOfType<AudioManager>().Play("normalObstacle");
 
         }
 

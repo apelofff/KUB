@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 54446198731316882}
   - component: {fileID: 82630832223217992}
   - component: {fileID: 96748340259396996}
-  - component: {fileID: 114007871391485526}
+  - component: {fileID: 114293326351771290}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634251880030830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.43, y: -6.08, z: -1.58}
+  m_LocalPosition: {x: -28.6, y: -0.72, z: 0}
   m_LocalScale: {x: 1.4593678, y: 1.4593674, z: 1.4593674}
   m_Children:
   - {fileID: 4060869112940542}
@@ -354,17 +354,6 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114007871391485526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1634251880030830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c7a8248213d5641b64f924a1e24bfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114097783334758856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,3 +383,14 @@ MonoBehaviour:
   gameobjects: []
   StopMotion: 0
   TimeScore: {fileID: 0}
+--- !u!114 &114293326351771290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634251880030830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7a8248213d5641b64f924a1e24bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
