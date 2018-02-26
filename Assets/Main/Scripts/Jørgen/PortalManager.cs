@@ -30,9 +30,4 @@ public class PortalManager : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-    }
-
-
 }

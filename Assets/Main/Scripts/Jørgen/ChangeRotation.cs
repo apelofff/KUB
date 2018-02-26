@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChangeRotation : MonoBehaviour {
 
     public PlayerControllers normalScript;
-    public PlayerScriptWithDifferentRotation rotationScript;
+   // public PlayerScriptWithDifferentRotation rotationScript;
     public GameObject Player;
     private float timeLefft;
     private ActivateRotation activateRotation;
@@ -15,11 +15,11 @@ public class ChangeRotation : MonoBehaviour {
     private void Start()
     {
         normalScript = Player.GetComponent<PlayerControllers>();
-        rotationScript = Player.GetComponent<PlayerScriptWithDifferentRotation>();
+        //rotationScript = Player.GetComponent<PlayerScriptWithDifferentRotation>();
         activateRotation = Player.GetComponent<ActivateRotation>();
 
         normalScript.enabled = true;
-        rotationScript.enabled = false;
+       // rotationScript.enabled = false;
         
     }
 
@@ -29,14 +29,14 @@ public class ChangeRotation : MonoBehaviour {
 
         if (timeLefft <= 0 && used == false)
         {
-            rotationScript.enabled = false;
+          //  rotationScript.enabled = false;
             normalScript.enabled = true;
             used = true;
         }
 
         else if(timeLefft > 0 && used == false)
         {
-            rotationScript.enabled = true;
+            //rotationScript.enabled = true;
             normalScript.enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
             
