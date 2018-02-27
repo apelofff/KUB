@@ -40,6 +40,8 @@ public class PlayerControllers : MonoBehaviour {
 
     [Header("Objects outside the game")]
     public GameObject targetArrow;
+    private float lerpTime;
+    private float shakeDuration;
 
 
     [Header("Juicy")]
@@ -51,23 +53,28 @@ public class PlayerControllers : MonoBehaviour {
     public GameObject[] gameobjects;
 
 
-    [SerializeField] bool StopMotion = false;
-    public T_HighScoreSystem TimeScore; 
+    [SerializeField]
+    bool StopMotion = false;
+    public bool isDead;
+    public T_HighScoreSystem TimeScore;
+    public bool nextMapIsStarting;
 
-    
+
     // proppeling the player foward using rb or the transform
     // the player van press space again to proppel the body forward, then body is kinematic and enable the animation Arrow.
     // the arrow needs to be the foward vector or rigth vector. only needing to rotate the cube.
-    
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
     {
         ThisTransform = GetComponent<Transform>();
         ThisRB = GetComponent<Rigidbody>();
         ThisRB.isKinematic = true;
         transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-        
+        lerpTime = Camera.main.GetComponent<CameraShake>().LerpSpeed;
+        nextMapIsStarting = false;
+        shakeDuration = Camera.main.GetComponent<CameraShake>().intialDuration;
 
 
         //slowMotion = GetComponent<SlowMotion>();
@@ -114,55 +121,61 @@ public class PlayerControllers : MonoBehaviour {
 
 
         // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 /*&& RotationOposite == false*/)
+        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == false) /*&& RotationOposite == false*/
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-            FindObjectOfType<AudioManager>().Play("Rotating");
+            FindObjectOfType<AudioManager>().Play("rotating");
         }
 
         else if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-            FindObjectOfType<AudioManager>().Play("Rotating");
+            FindObjectOfType<AudioManager>().Play("rotating");
         }
         else
             targetArrow.SetActive(false);
+        FindObjectOfType<AudioManager>().StopCoroutine("rotating");
 
-        if (Input.GetButtonDown("Jump") && StopMotion == false && ID == 1)
+
+        //Metode for å stanse spillet, starte camerashake, og så starte zooming transition
+        if (StopMotion == false && ID == 1)
         {
-            
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            FindObjectOfType<AudioManager>().Play("nextMap");
+            cameraShake.Shaking(); //Kameraet rister
+            if (Input.GetButton("Jump"))
+                Zoom(); //Kameraet zoomer
         }
     }
-   
+
+    private void Zoom()
+    {
+        cameraShake.Zooming();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        FindObjectOfType<AudioManager>().Play("nextMap");
+        StopAllCoroutines();
+    }
+
+
     public void OnTriggerEnter(Collider other)
     {
-        
         if(other.tag == "Player")
         {
-
             float add = other.transform.localScale.x * scaleDecrease;
             timeFloat = Mathf.Sqrt(timeFloat * timeFloat + add * add);
 
             ThisTransform.transform.position = other.transform.position;
-            DestroyObject(other.gameObject);
-            
+            DestroyObject(other.gameObject);     
         }
-
         //________________________________________________________________________________________________________________________
 
         if(other.tag == "Dead")
         {
-
             TimeScore.OnDeath();
             cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;
             FindObjectOfType<AudioManager>().Play("normalObstacle");
-
         }
 
         if(other.tag == "RotationChange" && RotationOposite == false)

@@ -19,7 +19,7 @@ public class J_LoseGravity : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-
+        if(other.tag == "antiGravity")
         FindObjectOfType<AudioManager>().Play("gravity");
     }
 

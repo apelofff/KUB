@@ -4,9 +4,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class AudioPeer : MonoBehaviour {
+    public class AudioPeer : MonoBehaviour {
     public static AudioPeer instance;
-    AudioSource _audio;
+    public AudioSource _audio;
     public static float[] _samples = new float[512];
     public static float[] _freqBand = new float[8];
 	// Use this for initialization
