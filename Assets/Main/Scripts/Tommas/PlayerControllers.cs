@@ -183,6 +183,13 @@ public class PlayerControllers : MonoBehaviour {
             rotationTimer = 10;
             RotationOposite = true;
         }
+
+//_____________MUSIC________________
+
+        if(other.tag == "Sound2")
+        {
+            Sound2 = true;
+        }
     }
 
     /*void ChangeRotation()
@@ -202,6 +209,15 @@ public class PlayerControllers : MonoBehaviour {
 
         ID = 1;
 
+
+  
     }
+    public bool Sound2 = false;
+
+
+    /*private IEnumerator PlayMusic()
+    {
+       
+    }*/
 
 }

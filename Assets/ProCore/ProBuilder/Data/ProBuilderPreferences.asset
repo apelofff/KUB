@@ -13,19 +13,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Bool_keys:
   - pbIconGUI
+  - pbGenerateUV2PerObject
   m_Int_keys:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
   - pb_GIWorkflowMode
   - pbHandleAlignment
+  - pbMirrorObjectScale
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
   m_String_keys: []
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 00
-  m_Int_values: 01000000000000000100000000000000
+  m_Bool_values: 0000
+  m_Int_values: 000000000100000001000000000000000a000000
   m_Float_values:
   - 0
   - 0
