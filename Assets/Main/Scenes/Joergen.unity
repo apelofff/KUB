@@ -442,7 +442,7 @@ Camera:
   far clip plane: 40
   field of view: 60
   orthographic: 1
-  orthographic size: 12.090262
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -739,8 +739,8 @@ GameObject:
   m_Component:
   - component: {fileID: 660094566}
   - component: {fileID: 660094565}
-  - component: {fileID: 660094564}
   - component: {fileID: 660094563}
+  - component: {fileID: 660094564}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: antiGravity
@@ -782,8 +782,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &660094564
-CapsuleCollider:
+--- !u!65 &660094564
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -791,10 +791,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.0000045, z: 1.0000005}
+  m_Center: {x: 0, y: 0, z: -0.000000059604645}
 --- !u!33 &660094565
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1012,11 +1011,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -30.739
+      value: -30.51
       objectReference: {fileID: 0}
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.08
+      value: 5.39
       objectReference: {fileID: 0}
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2360,8 +2359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1925380403}
   - component: {fileID: 1925380402}
-  - component: {fileID: 1925380401}
   - component: {fileID: 1925380400}
+  - component: {fileID: 1925380401}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: antiGravity
@@ -2403,8 +2402,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1925380401
-CapsuleCollider:
+--- !u!65 &1925380401
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2412,9 +2411,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.0000038, z: 1.0000006}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1925380402
 MeshFilter:

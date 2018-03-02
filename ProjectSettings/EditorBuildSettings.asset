@@ -33,5 +33,8 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/FinalLevel.unity
     guid: b70d20c420062164ea74d4d1e8829704
   - enabled: 1
+    path: Assets/Main/Scenes/PostGame.unity
+    guid: 841ca442b55f55249b198db08bc0b5a3
+  - enabled: 1
     path: Assets/Main/Scenes/Menu/LevelSelct.unity
     guid: 75fda76bc9551f149a7077e647ff815f

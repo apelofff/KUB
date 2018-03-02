@@ -13,11 +13,13 @@ public class CameraShake : MonoBehaviour {
     public bool shouldShake = false;
 
     Vector3 startingPostion;
-    float intialDuration;
+    public float intialDuration;
+    public float LerpSpeed;
 
     public Transform targetPlayer;
     public float smoothingSpeed = 0.125f;
     public Vector3 offset;
+    public Vector3 offset_death;
 
     //Takk for støtten tommas, digger at du følger med!
 
@@ -27,7 +29,7 @@ public class CameraShake : MonoBehaviour {
     // Use this for initialization
     void Start () {
         camera = Camera.main.transform;
-        
+        transform.position = Vector3.Lerp(targetPlayer.position + offset_death, transform.position + offset, LerpSpeed);
         intialDuration = duration; 
 
 	}
@@ -36,29 +38,28 @@ public class CameraShake : MonoBehaviour {
         Vector3 desierdPosition = targetPlayer.position + offset;
         Vector3 smoothedPostion = Vector3.Lerp(transform.position, desierdPosition, smoothingSpeed);
         transform.position = smoothedPostion;
-
-
     }
 
     // Update is called once per frame
-    void Update () {
-
+    public void Update ()
+    {
         if (shouldShake)
         {
-            if (duration > 0)
-            {
-                camera.localPosition = targetPlayer.transform.position + offset + Random.insideUnitSphere * power;
-                duration -= Time.deltaTime * slowDownTime;
-                
-            }
-            else
-            {
-                shouldShake = false; 
-                duration = intialDuration;
-                camera.localPosition = targetPlayer.transform.position + offset;
-            }
-        }
+            Shaking();
+        } 
 	}
 
-   
+    public void Zooming()
+    {
+        camera.localPosition = Vector3.Lerp(transform.position + offset, targetPlayer.position + offset_death, LerpSpeed);
+    }
+
+    public void Shaking()
+    {
+        if (duration > 0)
+        {
+            camera.localPosition = camera.localPosition + Random.insideUnitSphere * power;
+            duration -= Time.deltaTime * slowDownTime;
+        }
+    }
 }

@@ -8,7 +8,7 @@ public class ChangeRotation : MonoBehaviour {
    // public PlayerScriptWithDifferentRotation rotationScript;
     public GameObject Player;
     private float timeLefft;
-    private ActivateRotation activateRotation;
+   // private ActivateRotation activateRotation;
     private bool used = false;
 
 
@@ -16,7 +16,7 @@ public class ChangeRotation : MonoBehaviour {
     {
         normalScript = Player.GetComponent<PlayerControllers>();
         //rotationScript = Player.GetComponent<PlayerScriptWithDifferentRotation>();
-        activateRotation = Player.GetComponent<ActivateRotation>();
+       // activateRotation = Player.GetComponent<ActivateRotation>();
 
         normalScript.enabled = true;
        // rotationScript.enabled = false;
@@ -25,7 +25,7 @@ public class ChangeRotation : MonoBehaviour {
 
     public void Update()
     {
-        timeLefft = activateRotation.timeLeft;
+       // timeLefft = activateRotation.timeLeft;
 
         if (timeLefft <= 0 && used == false)
         {
