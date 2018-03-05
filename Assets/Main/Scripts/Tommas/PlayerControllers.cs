@@ -59,6 +59,8 @@ public class PlayerControllers : MonoBehaviour {
     public T_HighScoreSystem TimeScore;
     public bool nextMapIsStarting;
 
+    public bool GravitiyisOn = false;
+
 
     // proppeling the player foward using rb or the transform
     // the player van press space again to proppel the body forward, then body is kinematic and enable the animation Arrow.
@@ -94,7 +96,8 @@ public class PlayerControllers : MonoBehaviour {
         rotationTimer -= Time.deltaTime;
         if (timeFloat>0)
             scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
-        ThisTransform.localScale = scaleSize ;
+        ThisTransform.localScale = scaleSize;
+
         if (Input.GetButton("Jump") && ID == 1)
         {
             ThisRB.isKinematic = true;
@@ -103,32 +106,19 @@ public class PlayerControllers : MonoBehaviour {
         else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
             ThisRB.isKinematic = false; 
             ThisRB.AddForce(transform.right * shootingSpeed);
-        }
+        } 
+        
 
         if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == false)
         {
             Littlejump();
             RotationOposite = true;
         }
-
         else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
         {
             RotationOposite = false;
         }
 
-        //ChangeRotation();
-        //_____________________________________________________________
-
-
-        // SlowMotion state, and aiming state
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == false) /*&& RotationOposite == false*/
-        {
-            targetArrow.SetActive(true);
-            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-            FindObjectOfType<AudioManager>().Play("rotating");
-        }
-
-             if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
 
          if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
 
@@ -136,7 +126,7 @@ public class PlayerControllers : MonoBehaviour {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
             FindObjectOfType<AudioManager>().Play("rotating");
-        }
+        } 
         else
             targetArrow.SetActive(false);
         FindObjectOfType<AudioManager>().StopCoroutine("rotating");
@@ -170,6 +160,8 @@ public class PlayerControllers : MonoBehaviour {
             ThisTransform.transform.position = other.transform.position;
             DestroyObject(other.gameObject);     
         }
+       
+
         //________________________________________________________________________________________________________________________
 
         if(other.tag == "Dead")
@@ -217,10 +209,9 @@ public class PlayerControllers : MonoBehaviour {
     }
     public bool Sound2 = false;
 
+   
 
-    /*private IEnumerator PlayMusic()
-    {
-       
-    }*/
+
+
 
 }
