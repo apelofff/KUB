@@ -480,24 +480,28 @@ MonoBehaviour:
   - name: rotating
     clip: {fileID: 8300000, guid: 6db19cdee822f5541b80656f0dc40698, type: 3}
     pitch: 1
+    reverb: 0
     volume: 0.7
     source: {fileID: 0}
     loop: 0
   - name: nextMap
     clip: {fileID: 8300000, guid: 332c3b5429a9a034caff04b29e208a92, type: 3}
     pitch: 1.01
+    reverb: 0
     volume: 0.989
     source: {fileID: 0}
     loop: 0
   - name: normalObstacle
     clip: {fileID: 8300000, guid: b1c1609cd16b301448e69527c0a68568, type: 3}
     pitch: 1.01
+    reverb: 0
     volume: 0.746
     source: {fileID: 0}
     loop: 0
   - name: gravity
     clip: {fileID: 8300000, guid: d8f841a9393572347a095d1598505633, type: 3}
     pitch: 1.01
+    reverb: 0
     volume: 0.746
     source: {fileID: 0}
     loop: 0
