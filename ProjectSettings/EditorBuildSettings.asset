@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/TutorialLevels/TutorialLevel3.unity
     guid: 4a1926f300320374fadd952fc733983e
   - enabled: 1
-    path: Assets/Main/Scenes/Joergen.unity
-    guid: 08687a77ce7f9b34b97cccc9a6a8e5a2
-  - enabled: 1
     path: Assets/Main/Scenes/Level Avalan.unity
     guid: bea10299c23940443b00448e9f3189c2
+  - enabled: 1
+    path: Assets/Main/Scenes/Joergen.unity
+    guid: 08687a77ce7f9b34b97cccc9a6a8e5a2
   - enabled: 1
     path: Assets/Main/Scenes/Lvl1.unity
     guid: 82809aeed02ba974281664c2696e1393
