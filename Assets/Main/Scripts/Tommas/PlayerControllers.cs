@@ -106,6 +106,8 @@ public class PlayerControllers : MonoBehaviour {
         else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
             ThisRB.isKinematic = false; 
             ThisRB.AddForce(transform.right * shootingSpeed);
+            FindObjectOfType<AudioManager>().Play("shoot");
+
         } 
         
 
@@ -200,6 +202,7 @@ public class PlayerControllers : MonoBehaviour {
      
         ThisRB.AddForce(transform.up * shootingSpeed);
         StopMotion = true;
+        
         // slowMotion.slowDownActive = true; 
 
         ID = 1;
