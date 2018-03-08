@@ -100,10 +100,10 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.6
-        threshold: 5.65
-        softKnee: 1
-        radius: 3.48
+        intensity: 0.92
+        threshold: 5.77
+        softKnee: 0.921
+        radius: 3.33
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
         temperature: 0
         tint: -0
         hueShift: 0
-        saturation: 1.419
+        saturation: 1.137
         contrast: 0.959
       channelMixer:
         red: {x: 1, y: 0, z: 0}
@@ -253,7 +253,19 @@ MonoBehaviour:
         satVSsat:
           curve:
             serializedVersion: 2
-            m_Curve: []
+            m_Curve:
+            - serializedVersion: 2
+              time: 0
+              value: 0.5263158
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+            - serializedVersion: 2
+              time: 1
+              value: 0.6096491
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 0
