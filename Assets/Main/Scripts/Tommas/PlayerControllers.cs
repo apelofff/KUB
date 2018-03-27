@@ -58,7 +58,7 @@ public class PlayerControllers : MonoBehaviour {
     public bool isDead;
     public T_HighScoreSystem TimeScore;
     public bool nextMapIsStarting;
-
+    public float rotationMultiplier;
     public bool GravitiyisOn = false;
 
 
@@ -82,14 +82,18 @@ public class PlayerControllers : MonoBehaviour {
         //slowMotion = GetComponent<SlowMotion>();
 
 
-        //Invoke("Littlejump", 1f);
+    //Invoke("Littlejump", 1f);
 
 
-    }
+}
 	
 	// Update is called once per frame
 	void Update () {
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            rotationSpeedZ = rotationSpeedZ + rotationMultiplier; 
+        }
         // This is for the scaling down over time
 
         timeFloat -= Time.deltaTime;
@@ -122,8 +126,7 @@ public class PlayerControllers : MonoBehaviour {
         }
 
 
-         if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
-
+        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
@@ -158,7 +161,6 @@ public class PlayerControllers : MonoBehaviour {
         {
             float add = other.transform.localScale.x * scaleDecrease;
             timeFloat = Mathf.Sqrt(timeFloat * timeFloat + add * add);
-
             ThisTransform.transform.position = other.transform.position;
             DestroyObject(other.gameObject);     
         }
