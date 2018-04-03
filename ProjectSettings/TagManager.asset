@@ -15,6 +15,7 @@ TagManager:
   - Gold
   - SpecialSkin
   - Funnyskin
+  - Wall
   layers:
   - Default
   - TransparentFX

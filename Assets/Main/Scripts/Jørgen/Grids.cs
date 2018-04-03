@@ -9,7 +9,7 @@ public class Grids : MonoBehaviour {
 	
 	void Start ()
     {
-        Instantiate 
+      //  Instantiate 
 	}
 	
 	// Update is called once per frame

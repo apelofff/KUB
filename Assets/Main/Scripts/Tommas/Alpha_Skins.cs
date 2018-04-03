@@ -5,7 +5,8 @@ using UnityEngine;
 public class Alpha_Skins : MonoBehaviour {
 
     [SerializeField] private bool IsGold = false ;
-    [SerializeField] private bool ISspecialskin = false; 
+    [SerializeField] private bool ISspecialskin = false;
+    
 
     public Material[] material;
     Renderer rendering;
