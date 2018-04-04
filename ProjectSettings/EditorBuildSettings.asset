@@ -6,35 +6,44 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Main/Scenes/FERDIGE LEVELS/LEVEL1/1.unity
+    guid: b58685301d8557e459f43aff56052374
+  - enabled: 1
+    path: Assets/Main/Scenes/FERDIGE LEVELS/LEVEL2/2.unity
+    guid: 84996e543b7eaab4fa7e96d893d83562
+  - enabled: 1
+    path: Assets/Main/Scenes/FERDIGE LEVELS/LEVEL3/3.unity
+    guid: 66c77c5c333cc2040949792c9eaabc8c
+  - enabled: 0
     path: Assets/Main/Scenes/Menu/MainMenu.unity
     guid: cdf9c6ad9ebc4fb4c96ae8c4a24a025c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/TutorialLevels/TutorialLevel1.unity
     guid: ccddce49aa0eb1f46b66134ecc019057
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/TutorialLevels/TutorialLevel2.unity
     guid: 0491c1cff92daee48b8ab178049110d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/TutorialLevels/TutorialLevel3.unity
     guid: 4a1926f300320374fadd952fc733983e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/Level Avalan.unity
     guid: bea10299c23940443b00448e9f3189c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/Joergen.unity
     guid: 08687a77ce7f9b34b97cccc9a6a8e5a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/Lvl1.unity
     guid: 82809aeed02ba974281664c2696e1393
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/Level 2.unity
     guid: d5d044f7813c5274eb661428fc36158e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/FinalLevel.unity
     guid: b70d20c420062164ea74d4d1e8829704
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/PostGame.unity
     guid: 841ca442b55f55249b198db08bc0b5a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/Menu/LevelSelct.unity
     guid: 75fda76bc9551f149a7077e647ff815f

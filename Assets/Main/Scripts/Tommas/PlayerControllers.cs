@@ -120,10 +120,10 @@ public class PlayerControllers : MonoBehaviour {
             Littlejump();
             RotationOposite = true;
         }
-        else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
+        /*else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
         {
             RotationOposite = false;
-        }
+        }*/
 
 
         if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
@@ -191,13 +191,13 @@ public class PlayerControllers : MonoBehaviour {
         }
     }
 
-    /*void ChangeRotation()
+    void ChangeRotation()
     {
         if (rotationTimer == 0)
         {
             RotationOposite = false;
         }
-    }*/
+    }
 
     void Littlejump()
     {
