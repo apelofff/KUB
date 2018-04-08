@@ -15,6 +15,8 @@ public class CameraShake : MonoBehaviour {
     Vector3 startingPostion;
     public float intialDuration;
     public float LerpSpeed;
+    public float StartLerpSpeed;
+    public float DeathLerpSpeed;
 
     public Transform targetPlayer;
     public float smoothingSpeed = 0.125f;
@@ -29,9 +31,8 @@ public class CameraShake : MonoBehaviour {
     // Use this for initialization
     void Start () {
         camera = Camera.main.transform;
-        transform.position = Vector3.Lerp(targetPlayer.position + offset_death, transform.position + offset, LerpSpeed);
+        transform.position = Vector3.Lerp(targetPlayer.position + offset_death, transform.position + offset, StartLerpSpeed);
         intialDuration = duration; 
-
 	}
     private void FixedUpdate()
     {
@@ -46,12 +47,16 @@ public class CameraShake : MonoBehaviour {
         if (shouldShake)
         {
             Shaking();
+            if (Input.GetButtonDown("Jump"))
+            {
+                Zooming();
+            }
         } 
 	}
 
     public void Zooming()
     {
-        camera.localPosition = Vector3.Lerp(transform.position + offset, targetPlayer.position + offset_death, LerpSpeed);
+        camera.localPosition = Vector3.Lerp(transform.position + offset, targetPlayer.position + offset_death, DeathLerpSpeed);
     }
 
     public void Shaking()

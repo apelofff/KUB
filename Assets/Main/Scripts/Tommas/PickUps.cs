@@ -12,10 +12,10 @@ public class PickUps : MonoBehaviour {
     public static int[][] pickup = new int[5][]
     {
       /* Stage 1*/ new int[]  {2,1,2,3,4},
-      /* Stage 1*/ new int[] {3,6,7},
-      /* Stage 1*/ new int[] {4,9},
-      /* Stage 1*/ new int[] {5,11},
-      /* Stage 1*/ new int[] {5, 89}
+      /* Stage 2*/ new int[] {3,6,7},
+      /* Stage 3*/ new int[] {4,9},
+      /* Stage 4*/ new int[] {5,11},
+      /* Stage 5*/ new int[] {5, 89}
     };
 
     public static int Stage;
@@ -26,10 +26,10 @@ public class PickUps : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        Stage = 1;
-        Level = 2;
+        Stage = 3;
+        Level = 1;
         coreChangeValueInStage = 3;
-        AtthisLevel = 5; 
+        AtthisLevel = 1; 
 
 
         Debug.Log(pickup[Stage][Level]);
