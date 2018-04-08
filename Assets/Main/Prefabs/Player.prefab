@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634251880030830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.31, y: -0.72, z: 0}
+  m_LocalPosition: {x: 256.5, y: 245.33, z: 0}
   m_LocalScale: {x: 1.4593678, y: 1.4593674, z: 1.4593674}
   m_Children:
   - {fileID: 4060869112940542}
@@ -89,10 +89,10 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb589fe4dcc56964ab833a91495f0179, type: 2}
+  - {fileID: 2100000, guid: 1752797fd4696a54e95b93e247c65a95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 46a075ace2730274faaf9ac805418aa0, type: 2}
+  - {fileID: 2100000, guid: 1752797fd4696a54e95b93e247c65a95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,14 +275,14 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634251880030830}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
+  m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46a075ace2730274faaf9ac805418aa0, type: 2}
+  - {fileID: 2100000, guid: 2ccf251216d2d6f4285a9b74945dc1c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,14 +377,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0dd9a0490c56f41bd1ccd25623a681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingSpeed: 1000
+  shootingSpeed: 1300
   ThisTransform: {fileID: 4717432996769306}
   ThisRB: {fileID: 54446198731316882}
   newRot: {x: 0.08715574, y: 0, z: 0, w: 0.9961947}
   switching: 0
   scaleSize: {x: 0, y: 0, z: 0}
   decreasingValue: {x: 0, y: 0, z: 0}
-  rotationSpeedZ: 360
+  rotationSpeedZ: 300
   RotationOposite: 0
   rotationTimer: 0
   scaleDecrease: 60
@@ -397,6 +397,7 @@ MonoBehaviour:
   isDead: 0
   TimeScore: {fileID: 0}
   nextMapIsStarting: 0
+  rotationMultiplier: 0
   GravitiyisOn: 0
   Sound2: 0
 --- !u!114 &114224370624353420

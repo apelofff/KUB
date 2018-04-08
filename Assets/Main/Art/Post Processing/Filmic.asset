@@ -27,7 +27,7 @@ MonoBehaviour:
   fog:
     m_Enabled: 1
     m_Settings:
-      excludeSkybox: 1
+      excludeSkybox: 0
   antialiasing:
     m_Enabled: 1
     m_Settings:
@@ -58,7 +58,7 @@ MonoBehaviour:
         maxDistance: 83
         iterationCount: 256
         stepSize: 3
-        widthModifier: 0.5
+        widthModifier: 1.81
         reflectionBlur: 1
         reflectBackfaces: 0
       intensity:
@@ -67,20 +67,20 @@ MonoBehaviour:
         fresnelFade: 1
         fresnelFadePower: 1
       screenEdgeMask:
-        intensity: 0.03
+        intensity: 0.953
   depthOfField:
-    m_Enabled: 1
-    m_Settings:
-      focusDistance: 10
-      aperture: 1.7
-      focalLength: 1
-      useCameraFov: 1
-      kernelSize: 1
-  motionBlur:
     m_Enabled: 0
     m_Settings:
-      shutterAngle: 270
-      sampleCount: 10
+      focusDistance: 60
+      aperture: 12.2
+      focalLength: 300
+      useCameraFov: 0
+      kernelSize: 0
+  motionBlur:
+    m_Enabled: 1
+    m_Settings:
+      shutterAngle: 79
+      sampleCount: 6
       frameBlending: 0
   eyeAdaptation:
     m_Enabled: 0
