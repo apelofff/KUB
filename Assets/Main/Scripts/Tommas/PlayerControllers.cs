@@ -60,6 +60,7 @@ public class PlayerControllers : MonoBehaviour {
     public bool nextMapIsStarting;
     public float rotationMultiplier;
     public bool GravitiyisOn = false;
+    public NextLevelManger nextLevelManager;
 
 
     // proppeling the player foward using rb or the transform
@@ -77,6 +78,8 @@ public class PlayerControllers : MonoBehaviour {
         lerpTime = Camera.main.GetComponent<CameraShake>().LerpSpeed;
         nextMapIsStarting = false;
         shakeDuration = Camera.main.GetComponent<CameraShake>().intialDuration;
+        nextLevelManager = GameObject.Find("NEXTLEVEL").GetComponent<NextLevelManger>();
+        
 
 
         //slowMotion = GetComponent<SlowMotion>();
@@ -141,18 +144,18 @@ public class PlayerControllers : MonoBehaviour {
         if (StopMotion == false && ID == 1)
         {
             cameraShake.Shaking(); //Kameraet rister
-            if (Input.GetButton("Jump"))
-                Zoom(); //Kameraet zoomer
+           // if (Input.GetButton("Jump"))
+                //Zoom(); //Kameraet zoomer
         }
     }
 
-    private void Zoom()
+   /* private void Zoom()
     {
         cameraShake.Zooming();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         FindObjectOfType<AudioManager>().Play("nextMap");
         StopAllCoroutines();
-    }
+    }*/
 
 
     public void OnTriggerEnter(Collider other)
@@ -183,9 +186,14 @@ public class PlayerControllers : MonoBehaviour {
             RotationOposite = true;
         }
 
-//_____________MUSIC________________
+        if (other.tag == "NEXTLEVEL")
+        {
+            StartCoroutine(nextLevelManager.Transition());
+        }
 
-        if(other.tag == "Sound2")
+        //_____________MUSIC________________
+
+        if (other.tag == "Sound2")
         {
             Sound2 = true;
         }
