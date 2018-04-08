@@ -186,10 +186,10 @@ public class PlayerControllers : MonoBehaviour {
             RotationOposite = true;
         }
 
-        if (other.tag == "NEXTLEVEL")
+        /*if (other.tag == "NEXTLEVEL")
         {
             StartCoroutine(nextLevelManager.Transition());
-        }
+        }*/
 
         //_____________MUSIC________________
 
