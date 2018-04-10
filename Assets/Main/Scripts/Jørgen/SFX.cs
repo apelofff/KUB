@@ -21,4 +21,9 @@ public class SFX {
 
     public bool loop;
 
+    public void Update()
+    {
+        songLength = source.time;
+    }
+
 }
