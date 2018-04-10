@@ -11,49 +11,23 @@ MonoBehaviour:
   m_Script: {fileID: 146836576, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
   m_Name: ProBuilderPreferences
   m_EditorClassIdentifier: 
-  m_Bool_keys:
-  - pbIconGUI
-  - pbGenerateUV2PerObject
-  - pbDragSelectWholeElement
-  - pb_MeshImporter::quads
-  - pb_MeshImporter::smoothing
-  - pbExtrudeAsGroup
-  - pbManifoldEdgeExtrusion
-  - pbFillHoleSelectsEntirePath
-  - pb_SmoothingGroupEditor::m_ShowPreview
-  - pb_SmoothingGroupEditor::m_DrawNormals
+  m_Bool_keys: []
   m_Int_keys:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
-  - pb_GIWorkflowMode
   - pbHandleAlignment
-  - pbMirrorObjectScale
-  - pbDragSelectMode
+  - pb_GIWorkflowMode
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
-  - pbBevelAmount
-  - pb_MeshImporter::smoothingThreshold
-  - pbExtrudeDistance
-  - pb_SmoothingGroupEditor::m_NormalsSize
-  m_String_keys:
-  - pbCurrentMaterialPalette
+  m_String_keys: []
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 00000001010100000101
-<<<<<<< HEAD
-  m_Int_values: 000000000000000000000000010000000a00000002000000
-=======
-  m_Int_values: 010000000200000000000000000000000a00000002000000
->>>>>>> ace24cc85c0643af660f14696f58b035a501a6f7
+  m_Bool_values: 
+  m_Int_values: 01000000020000000000000000000000
   m_Float_values:
   - 0
-  - 0
-  - 0.078351945
-  - 0.0001
-  - 0.5
-  - 0.46919563
-  m_String_values:
-  - Assets/ProCore/ProBuilder/Data/Default Material Palette.asset
+  - 360
+  m_String_values: []
   m_Color_values: []
   m_Material_values: []

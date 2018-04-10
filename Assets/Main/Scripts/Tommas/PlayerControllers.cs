@@ -80,7 +80,7 @@ public class PlayerControllers : MonoBehaviour {
         lerpTime = Camera.main.GetComponent<CameraShake>().LerpSpeed;
         nextMapIsStarting = false;
         shakeDuration = Camera.main.GetComponent<CameraShake>().intialDuration;
-        nextLevelManager = GameObject.Find("NEXTLEVEL").GetComponent<NextLevelManger>();
+        //nextLevelManager = GameObject.Find("NEXTLEVEL").GetComponent<NextLevelManger>();
         resetLevel = false; 
         
 
@@ -142,7 +142,8 @@ public class PlayerControllers : MonoBehaviour {
             targetArrow.SetActive(true);
             transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
             FindObjectOfType<AudioManager>().Play("rotating");
-        } 
+        }
+
         else
             targetArrow.SetActive(false);
         FindObjectOfType<AudioManager>().StopCoroutine("rotating");
