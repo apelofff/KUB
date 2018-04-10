@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour {
 
+    private bool Death = false;
 
-    [SerializeField] private bool Death = false; 
-    public static int pickupcounter;
-    
     public static int[][] pickup = new int[5][]
     {
       /* Stage 1*/ new int[]  {2,1,2,3,4},
@@ -22,18 +20,18 @@ public class PickUps : MonoBehaviour {
     public static int Level;
     public static int coreChangeValueInStage;
     public static int AtthisLevel;
+    public static bool IsThisANormalLevel = false;
+    public static int pickupcounter;
 
     // Use this for initialization
     void Start () {
-
         Stage = 3;
         Level = 1;
         coreChangeValueInStage = 3;
-        AtthisLevel = 1; 
-
-
+        AtthisLevel = 1;
         Debug.Log(pickup[Stage][Level]);
         pickupcounter = pickup[Stage][Level];
+        
     }
 	
 	// Update is called once per frame
@@ -41,33 +39,31 @@ public class PickUps : MonoBehaviour {
 
         Debug.Log(pickupcounter);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-           pickupcounter = pickupcounter - 1; 
-        } else if (pickupcounter <= 0)
-        {
-            Death = true; 
-            pickupcounter = pickup[Stage][Level]; 
+        if (Input.GetKeyDown(KeyCode.L)){
+            IsThisANormalLevel = true;
+            Debug.Log("Heyoo"); 
         }
-        
-        if (pickup[Stage][Level] == pickup[coreChangeValueInStage][AtthisLevel])
-        {
-        
+
+        if(IsThisANormalLevel == false){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                pickupcounter = pickupcounter - 1;
+            }
+            if (pickupcounter == 0) {
+                Death = true;              
+            }            
         }
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Pickups")
-        {
+        if(other.tag == "Pickups"){
             pickupcounter++;  
         }
     }
 
     private void OnDestroy()
     {
-       if(Death == true)
-        {
+       if(Death == true){
             Debug.Log("You are dead :(");
         }
     }
