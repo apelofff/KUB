@@ -62,6 +62,8 @@ public class PlayerControllers : MonoBehaviour {
     public bool GravitiyisOn = false;
     public NextLevelManger nextLevelManager;
 
+    public bool resetLevel = false; 
+
 
     // proppeling the player foward using rb or the transform
     // the player van press space again to proppel the body forward, then body is kinematic and enable the animation Arrow.
@@ -79,6 +81,7 @@ public class PlayerControllers : MonoBehaviour {
         nextMapIsStarting = false;
         shakeDuration = Camera.main.GetComponent<CameraShake>().intialDuration;
         nextLevelManager = GameObject.Find("NEXTLEVEL").GetComponent<NextLevelManger>();
+        resetLevel = false; 
         
 
 
@@ -128,6 +131,11 @@ public class PlayerControllers : MonoBehaviour {
             RotationOposite = false;
         }*/
 
+        if(resetLevel == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
 
         if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
         {
@@ -141,12 +149,12 @@ public class PlayerControllers : MonoBehaviour {
 
 
         //Metode for å stanse spillet, starte camerashake, og så starte zooming transition
-        if (StopMotion == false && ID == 1)
-        {
-            cameraShake.Shaking(); //Kameraet rister
+       // if (StopMotion == false && ID == 1)
+       // {
+            //cameraShake.Shaking(); //Kameraet rister
            // if (Input.GetButton("Jump"))
                 //Zoom(); //Kameraet zoomer
-        }
+      //  }
     }
 
    /* private void Zoom()
@@ -178,6 +186,8 @@ public class PlayerControllers : MonoBehaviour {
             StopMotion = false; 
             ThisRB.isKinematic = true;
             FindObjectOfType<AudioManager>().Play("normalObstacle");
+            resetLevel = true;          
+                     
         }
 
         if(other.tag == "RotationChange" && RotationOposite == false)
