@@ -40,9 +40,6 @@ public class T_HighScoreSystem : MonoBehaviour {
             //Highscore.ToString;
         }
 
-
-
-
         if (IsTimerOn == true)
         {
             currentTimeOnThisLevel += Time.deltaTime; 

@@ -61,8 +61,8 @@ public class StatesTest : MonoBehaviour
 
         if (myState == States.s_Start)                  { State_Start(); }
         else if (myState == States.s_Rotating)          { State_Rotate(); } 
-        else if (myState == States.s_Death)             {State_Death(); }
-        else if (myState == States.s_Flying)            {State_Flying(); }
+        else if (myState == States.s_Death)             { State_Death(); }
+        else if (myState == States.s_Flying)            { State_Flying(); }
         //else if (myState == States.s_DiffRot)           {States_RotationOposite(); }
     }
 

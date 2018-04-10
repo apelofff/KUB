@@ -4,30 +4,16 @@ using UnityEngine;
 
 public class PortalManager : MonoBehaviour
 {
-
-    public List <GameObject> nextPortal = new List<GameObject>();
-    public Vector3 pos;
-    public int portalCounter;
+    public Transform portal1;
+    public Transform portal2;
     public bool isInTrigger;
-
-    private void Start()
-    {
-        portalCounter = 0;
-        pos = nextPortal[portalCounter].transform.position;
-    }
-
-    private void Update()
-    {
-        Debug.Log(transform.position);
-    }
-
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "portal")
+        if (other.tag == "portal_1")
         {
-            transform.position = pos;
+            transform.position = portal2.transform.position;
+            isInTrigger = true;
         }
     }
-
 }

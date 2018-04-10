@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class GravitiyMoving : MonoBehaviour {
 
-    [SerializeField] private float movmentTranslation;
+
     [SerializeField] private Transform thisTransform;
-    [SerializeField] private Vector3 RandomAndgravitiyforce;
     [SerializeField] private float randomNumberRot;
     [SerializeField] private float checkIf;
     [SerializeField] private float SpeedDir = -1;
@@ -24,8 +23,6 @@ public class GravitiyMoving : MonoBehaviour {
     // Update is called once per frame
     private void Update () {
 
-
-        
         thisTransform.Translate(Vector3.up * SpeedDir * checkIf * Time.deltaTime);
 
 	}
@@ -35,7 +32,9 @@ public class GravitiyMoving : MonoBehaviour {
   
         if (other.tag == "Wall")
         {
+
             checkIf = checkIf * SpeedDir; 
+
         }
 
     }
