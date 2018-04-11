@@ -47,6 +47,7 @@ public class PlayerControllers : MonoBehaviour {
     [Header("Juicy")]
     public SlowMotion slowMotion;
     public CameraShake cameraShake;
+
   
 
     [Header("Players")]
@@ -61,6 +62,8 @@ public class PlayerControllers : MonoBehaviour {
     public float rotationMultiplier;
     public bool GravitiyisOn = false;
     public NextLevelManger nextLevelManager;
+
+
 
     public bool resetLevel = false; 
 
@@ -80,92 +83,86 @@ public class PlayerControllers : MonoBehaviour {
         lerpTime = Camera.main.GetComponent<CameraShake>().LerpSpeed;
         nextMapIsStarting = false;
         shakeDuration = Camera.main.GetComponent<CameraShake>().intialDuration;
-        nextLevelManager = GameObject.Find("NEXTLEVEL").GetComponent<NextLevelManger>();
-        resetLevel = false; 
-        
-
-
-        //slowMotion = GetComponent<SlowMotion>();
-
-
-    //Invoke("Littlejump", 1f);
-
-
-}
-	
-	// Update is called once per frame
-	void Update () {
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            rotationSpeedZ = rotationSpeedZ + rotationMultiplier; 
-        }
-        // This is for the scaling down over time
-
-        timeFloat -= Time.deltaTime;
-        rotationTimer -= Time.deltaTime;
-       // if (timeFloat>0)
-            //scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
-        //ThisTransform.localScale = scaleSize;
-
-        if (Input.GetButton("Jump") && ID == 1)
-        {
-            ThisRB.isKinematic = true;
-
-        }
-        else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
-            ThisRB.isKinematic = false; 
-            ThisRB.AddForce(transform.right * shootingSpeed);
-            FindObjectOfType<AudioManager>().Play("shoot");
-
-        } 
-        
-
-        if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == false)
-        {
-            Littlejump();
-            RotationOposite = true;
-        }
-        /*else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
-        {
-            RotationOposite = false;
-        }*/
-
-        if(resetLevel == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-
-        if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
-        {
-            targetArrow.SetActive(true);
-            transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
-            FindObjectOfType<AudioManager>().Play("rotating");
-        } 
-        else
-            targetArrow.SetActive(false);
-        FindObjectOfType<AudioManager>().StopCoroutine("rotating");
-
-
-        //Metode for å stanse spillet, starte camerashake, og så starte zooming transition
-       // if (StopMotion == false && ID == 1)
-       // {
-            //cameraShake.Shaking(); //Kameraet rister
-           // if (Input.GetButton("Jump"))
-                //Zoom(); //Kameraet zoomer
-      //  }
+        resetLevel = false;
     }
 
-   /* private void Zoom()
+
+
+        // Update is called once per frame
+    void Update()
     {
-        cameraShake.Zooming();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        FindObjectOfType<AudioManager>().Play("nextMap");
-        StopAllCoroutines();
-    }*/
+            if (Input.GetKey(KeyCode.W))
+            {
+                rotationSpeedZ = rotationSpeedZ + rotationMultiplier;
+            }
+            // This is for the scaling down over time
+
+            timeFloat -= Time.deltaTime;
+            rotationTimer -= Time.deltaTime;
+            // if (timeFloat>0)
+            //scaleSize  = new Vector3(timeFloat / scaleDecrease, timeFloat / scaleDecrease, timeFloat / scaleDecrease);
+            //ThisTransform.localScale = scaleSize;
+
+            if (Input.GetButton("Jump") && ID == 1)
+            {
+                ThisRB.isKinematic = true;
+
+            }
+            else if (Input.GetButtonUp("Jump") && StopMotion == true && ID == 1) {
+                ThisRB.isKinematic = false;
+                ThisRB.AddForce(transform.right * shootingSpeed);
+                FindObjectOfType<AudioManager>().Play("shoot");
+
+            }
 
 
+            if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == false)
+            {
+                Littlejump();
+                RotationOposite = true;
+            }
+            /*else if (Input.GetButtonDown("Jump") && ID == 0 && RotationOposite == true)
+            {
+                RotationOposite = false;
+            }*/
+
+            if (resetLevel == true && Input.GetButtonDown("Jump"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+
+            if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)
+            {
+                targetArrow.SetActive(true);
+                transform.Rotate(0, 0, Time.deltaTime * rotationSpeedZ);
+                FindObjectOfType<AudioManager>().Play("rotating");
+            }
+
+            else
+                targetArrow.SetActive(false);
+            FindObjectOfType<AudioManager>().StopCoroutine("rotating");
+
+
+            //Metode for å stanse spillet, starte camerashake, og så starte zooming transition
+            // if (StopMotion == false && ID == 1)
+            // {
+            //cameraShake.Shaking(); //Kameraet rister
+            // if (Input.GetButton("Jump"))
+            //Zoom(); //Kameraet zoomer
+            //  }
+        }
+
+    /* private void Zoom()
+     {
+         cameraShake.Zooming();
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         FindObjectOfType<AudioManager>().Play("nextMap");
+         StopAllCoroutines();
+     }*/
+
+
+   
     public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -176,7 +173,6 @@ public class PlayerControllers : MonoBehaviour {
             DestroyObject(other.gameObject);     
         }
        
-
         //________________________________________________________________________________________________________________________
 
         if(other.tag == "Dead")
@@ -231,10 +227,5 @@ public class PlayerControllers : MonoBehaviour {
   
     }
     public bool Sound2 = false;
-
-   
-
-
-
 
 }

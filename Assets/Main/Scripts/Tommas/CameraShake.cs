@@ -8,7 +8,7 @@ public class CameraShake : MonoBehaviour {
     public float power = 0.7f;
 
     public float duration = 0.1f;
-    public Transform camera;
+    public Transform cameras;
     public float slowDownTime = 1.0f;
     public bool shouldShake = false;
 
@@ -30,7 +30,7 @@ public class CameraShake : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        camera = Camera.main.transform;
+        cameras = Camera.main.transform;
         transform.position = Vector3.Lerp(targetPlayer.position + offset_death, transform.position + offset, StartLerpSpeed);
         intialDuration = duration; 
 	}
@@ -56,14 +56,14 @@ public class CameraShake : MonoBehaviour {
 
     public void Zooming()
     {
-        camera.localPosition = Vector3.Lerp(transform.position + offset, targetPlayer.position + offset_death, DeathLerpSpeed);
+        cameras.localPosition = Vector3.Lerp(transform.position + offset, targetPlayer.position + offset_death, DeathLerpSpeed);
     }
 
     public void Shaking()
     {
         if (duration > 0)
         {
-            camera.localPosition = camera.localPosition + Random.insideUnitSphere * power;
+            cameras.localPosition = cameras.localPosition + Random.insideUnitSphere * power;
             duration -= Time.deltaTime * slowDownTime;
         }
     }
