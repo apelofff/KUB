@@ -17,6 +17,11 @@ TagManager:
   - Funnyskin
   - NEXTLEVEL
   - level2
+  - portal_4
+  - portal_5
+  - portal_6
+  - portal_7
+  - portal_8
   layers:
   - Default
   - TransparentFX
@@ -26,7 +31,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 
