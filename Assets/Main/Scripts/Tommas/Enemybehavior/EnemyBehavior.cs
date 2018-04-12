@@ -63,6 +63,7 @@ public class EnemyBehavior : MonoBehaviour {
         if(other.tag == "Dead"){
             forCreatingState = true;
             ISTargetInRange = false;
+            makeEnemyRed.sharedMaterial = materialForEnemy[0];
         }
     }
 
