@@ -12,6 +12,14 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     // Use this for initialization
+
+    private MusicManager musicManager;
+
+    private void Start()
+    {
+        musicManager = GetComponent<MusicManager>();
+        
+    }
     void Awake()
     {
         if (instance == null)
@@ -34,21 +42,29 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.reverbZoneMix = s.reverb;
+            s.loop = false;
             
         }
-
     }
+
+
+
 
     public void Play(string name)
     {
+        name = name.ToString();
+
         if (sounds == null)
         {
             Debug.Log("Sound: " + name + " is not found");
             return;
         }
             Sound s = Array.Find(sounds, sound => sound.name == name);
-            if(!s.source.isPlaying)
-                s.source.Play();
+
+        if(!s.source.isPlaying)
+        {
+            s.source.Play();
+        }
     }
 
 }

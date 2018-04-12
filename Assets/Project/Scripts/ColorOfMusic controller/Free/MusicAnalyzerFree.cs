@@ -4,7 +4,7 @@
 
 public class MusicAnalyzerFree : MonoBehaviour {
     public static MusicAnalyzerFree instance = null;
-    private AudioSource audio;
+    private AudioSource audios;
     float[] spectrum = new float[128];
     // Spectrum is multiplayed with volume. To take any values from spectrum, volume should have not zero value
     [SerializeField] [HideInInspector] private float minVolume = 0.005f;
@@ -35,10 +35,10 @@ public class MusicAnalyzerFree : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        audio = GetComponent<AudioSource>();
-        audio.clip = Song;
-        audio.Play();
-        audio.loop = true;
+        audios = GetComponent<AudioSource>();
+        audios.clip = Song;
+        audios.Play();
+        audios.loop = true;
 
     }
 	
@@ -55,8 +55,8 @@ public class MusicAnalyzerFree : MonoBehaviour {
             AudioListener.volume = minVolume;
         };
 
-        audio.GetOutputData(spectrum, 0);
-        spectrumMultiply = 1 / audio.volume;
+        audios.GetOutputData(spectrum, 0);
+        spectrumMultiply = 1 / audios.volume;
     }
 
     private void UpdateColor()

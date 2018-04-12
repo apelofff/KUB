@@ -2719,9 +2719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b029e08db38c34bafdb127dd5afed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portal1: {fileID: 870464532}
-  portal2: {fileID: 517597392}
-  isInTrigger: 0
+  portal1: {fileID: 517597392}
+  portal2: {fileID: 870464532}
+  isInTrigger: 1
 --- !u!1001 &575475606
 Prefab:
   m_ObjectHideFlags: 0

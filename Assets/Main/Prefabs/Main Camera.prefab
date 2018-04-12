@@ -84,7 +84,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.42647058, g: 0.54908717, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.2205882, g: 0.64523315, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -92,10 +92,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 37
-  orthographic: 0
-  orthographic size: 15
+  orthographic: 1
+  orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 1
   duration: 1
-  camera: {fileID: 4038820070766670}
+  cameras: {fileID: 0}
   slowDownTime: 1
   shouldShake: 0
   intialDuration: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   targetPlayer: {fileID: 0}
   smoothingSpeed: 0.125
   offset: {x: 0, y: 0, z: -60}
-  offset_death: {x: 0, y: 0, z: -3}
+  offset_death: {x: 0, y: 0, z: -58}
   GAmeOVer: {fileID: 1042049811459910}
   Victory: {fileID: 0}
 --- !u!124 &124674012595727660
