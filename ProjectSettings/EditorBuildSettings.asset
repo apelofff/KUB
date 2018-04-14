@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/5.unity
     guid: 60c3e063bd82b7c40b5c3bc7c5ad0ea4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/7.unity
     guid: 3e47ce8daace01849a8fc6685e8f71b0
   - enabled: 0
