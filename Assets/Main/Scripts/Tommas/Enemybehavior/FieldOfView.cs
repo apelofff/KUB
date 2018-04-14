@@ -38,8 +38,6 @@ public class FieldOfView : MonoBehaviour {
                     // Enable Enemy Behavior
                     EnemyBehavior.ISTargetInRange = true; 
                     visableTargets.Add (target);
-                }else if(Physics.Raycast(transform.position, dirToTarget, distToTarget, obstiaclMask)){
-                    EnemyBehavior.ISTargetInRange = false; 
                 }
             }
         }

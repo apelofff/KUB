@@ -25,6 +25,9 @@ public class MusicManager : MonoBehaviour {
         myState = States.s_Level_Start;
     }
 
+
+
+/*
     private void Update()
     {
         delta = Time.timeSinceLevelLoad - lastFrameTime;
@@ -182,6 +185,7 @@ public class MusicManager : MonoBehaviour {
 
         }
     }
+    */
 
     //CheckSoundsToPlay();
 
