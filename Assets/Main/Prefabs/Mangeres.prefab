@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1238122567885454
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1942857735970894
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1973717249654988
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4157832288110476
 Transform:
   m_ObjectHideFlags: 1
@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506031167272932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0648613, y: 2.8592436, z: 50}
+  m_LocalPosition: {x: -35.41486, y: 5.259244, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4228043658878556}
@@ -262,7 +262,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d3b1f78952d610c46a0f7ac79e3cdd62, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.306
   m_Pitch: 1
@@ -485,28 +485,28 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: nextMap
-    clip: {fileID: 8300000, guid: f339e6aa93024af45bf6544cfb07e84d, type: 3}
+    clip: {fileID: 8300000, guid: f992caf2565b8104faa70b643e690470, type: 3}
     pitch: 1.23
     reverb: 0
     volume: 0.291
     source: {fileID: 0}
     loop: 0
   - name: normalObstacle
-    clip: {fileID: 8300000, guid: 545648475173d7542ac3d42e902636ed, type: 3}
+    clip: {fileID: 8300000, guid: 89df6abbe3fc3314e98a5eee6663ed4f, type: 3}
     pitch: 1.54
     reverb: 0
     volume: 0.29
     source: {fileID: 0}
     loop: 0
   - name: gravity
-    clip: {fileID: 8300000, guid: d8f841a9393572347a095d1598505633, type: 3}
+    clip: {fileID: 8300000, guid: 10bcc8721b8f5c14cbb11b2fa45610f6, type: 3}
     pitch: 1.01
     reverb: 0
     volume: 0.261
     source: {fileID: 0}
     loop: 0
   - name: shoot
-    clip: {fileID: 8300000, guid: e114b37886acc764d8f166ed05cf37e7, type: 3}
+    clip: {fileID: 8300000, guid: 10bcc8721b8f5c14cbb11b2fa45610f6, type: 3}
     pitch: 0.9
     reverb: 0
     volume: 0.2
