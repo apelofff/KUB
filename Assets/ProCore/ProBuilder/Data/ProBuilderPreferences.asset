@@ -13,24 +13,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Bool_keys:
   - pbIconGUI
+  - pb_SmoothingGroupEditor::m_ShowPreview
+  - pb_SmoothingGroupEditor::m_PreviewDither
+  - pb_SmoothingGroupEditor::m_DrawNormals
+  - pbEnableBackfaceSelection
   m_Int_keys:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
   - pbHandleAlignment
   - pb_GIWorkflowMode
+  - pbDragSelectMode
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
   - pbBevelAmount
+  - pb_SmoothingGroupEditor::m_PreviewOpacity
+  - pb_SmoothingGroupEditor::m_NormalsSize
   m_String_keys: []
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 01
-  m_Int_values: 04000000010000000000000000000000
+  m_Bool_values: 0100010101
+  m_Int_values: 0400000002000000020000000000000001000000
   m_Float_values:
   - 0
   - 0
   - 0.17227933
+  - 0.259
+  - 0.48005435
   m_String_values: []
   m_Color_values: []
   m_Material_values: []

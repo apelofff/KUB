@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor; 
+using UnityEditor;
 
-[CustomEditor(typeof (FieldOfView))]
-public class EditorScript : Editor {
+[CustomEditor(typeof(FieldOfView))]
+public class EditorScript : Editor
+{
 
     private void OnSceneGUI()
     {
@@ -17,8 +18,9 @@ public class EditorScript : Editor {
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleA * fow.viewRadius);
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleB * fow.viewRadius);
 
-        Handles.color = Color.red; 
-        foreach(Transform visabletargets in fow.visableTargets) {
+        Handles.color = Color.red;
+        foreach (Transform visabletargets in fow.visableTargets)
+        {
             Handles.DrawLine(fow.transform.position, visabletargets.position);
         }
     }

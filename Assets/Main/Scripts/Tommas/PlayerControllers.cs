@@ -128,6 +128,7 @@ public class PlayerControllers : MonoBehaviour {
 
             if (resetLevel == true && Input.GetButtonDown("Jump"))
             {
+            EnemyBehavior.ISTargetInRange = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
