@@ -130,12 +130,12 @@ public class MusicManager : MonoBehaviour {
 
         if (MusicTimer <= 0)
         {
-            if (currentScene2 > 7)
+            if (currentScene2 > 8)
             {
                 myState = States.s_Level_4;
 
             }
-            else if (currentScene2 == 6)
+            else if (currentScene2 == 8)
             {
                 audioClip[currentScene2 - 1].loop = false;
                 MusicTimer = audioClip[currentScene2].clip.length;
@@ -146,6 +146,29 @@ public class MusicManager : MonoBehaviour {
     }
 
     private void State_Level6()
+    {
+        audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 7)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 7)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
+    }
+
+
+    private void State_Level5()
     {
         audioClip[currentScene2 - 1].loop = false;
         audioClip[currentScene2 - 2].loop = false;
@@ -168,7 +191,7 @@ public class MusicManager : MonoBehaviour {
     }
 
 
-    private void State_Level5()
+    private void State_Level4()
     {
         audioClip[currentScene2 - 1].loop = false;
         audioClip[currentScene2 - 2].loop = false;
@@ -190,12 +213,11 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
-
-    private void State_Level4()
+    private void State_Level3()
     {
         audioClip[currentScene2 - 1].loop = false;
         audioClip[currentScene2 - 2].loop = false;
-
+    
         if (MusicTimer <= 0)
         {
             if (currentScene2 > 4)
@@ -213,28 +235,6 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
-    private void State_Level3()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-    
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 3)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 3)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
     private void State_Level2()
     {
         audioClip[currentScene2 - 1].loop = false;
@@ -242,12 +242,12 @@ public class MusicManager : MonoBehaviour {
 
         if (MusicTimer <= 0)
         {
-            if (currentScene2 > 2)
+            if (currentScene2 > 3)
             {
                 myState = States.s_Level_3;
 
             }
-            else if(currentScene2 == 2)
+            else if(currentScene2 == 3)
             {
 
                 MusicTimer = audioClip[currentScene2].clip.length;
@@ -264,14 +264,14 @@ public class MusicManager : MonoBehaviour {
         if (MusicTimer <= 0)
         {
             
-            if (currentScene2 > 1)
+            if (currentScene2 > 2)
             {
                 myState = States.s_Level_2;
                 audioClip[currentScene2 - 1].loop = false;
                 audioClip[currentScene2 - 2].loop = false;
             }
 
-            if (currentScene2 == 1)
+            if (currentScene2 == 2)
             {
 
                 MusicTimer = audioClip[currentScene2].clip.length;
@@ -284,13 +284,13 @@ public class MusicManager : MonoBehaviour {
     {
         if(MusicTimer <= 0)
         {
-            if (currentScene2 > 0)
+            if (currentScene2 > 1)
             {
                 audioClip[currentScene2 - 1].loop = false;
                 myState = States.s_Level_1;
             }
 
-            if (currentScene2 == 0)
+            if (currentScene2 == 1)
             {
                 numberOfDifferentSongs = numberOfDifferentSongs + 1;
                 MusicTimer = audioClip[currentScene2].clip.length;

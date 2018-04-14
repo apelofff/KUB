@@ -2650,6 +2650,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal1: {fileID: 870464532}
   portal2: {fileID: 517597392}
+  portal3: {fileID: 0}
+  portal4: {fileID: 0}
+  portal5: {fileID: 0}
+  portal6: {fileID: 0}
+  portal7: {fileID: 0}
+  portal8: {fileID: 0}
   isInTrigger: 0
 --- !u!1001 &575475606
 Prefab:
@@ -12072,7 +12078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae0acec1dafe946a6b02437b5789f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 3
+  levelToLoad: 6
 --- !u!23 &1513168810
 MeshRenderer:
   m_ObjectHideFlags: 0
