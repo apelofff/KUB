@@ -113,6 +113,7 @@ public class PlayerControllers : MonoBehaviour {
                 ThisRB.AddForce(transform.right * shootingSpeed);
                 FindObjectOfType<AudioManager>().Play("shoot");
 
+
             }
 
 
