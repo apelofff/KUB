@@ -2,54 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD
-public class EnemyBehaviorA : MonoBehaviour
+
+public class EnemyBehavior : MonoBehaviour
 {
 
     [SerializeField] private Transform PlayerTarget;
     private Vector3 orginalPosition;
-=======
-public class EnemyBehavior : MonoBehaviour {
 
-    [SerializeField]private Transform PlayerTarget;
-    private Vector3 orginalPosition; 
->>>>>>> 889947a8acc74e019157904238283f5a64d0279e
     public static bool ISTargetInRange;
 
     public Renderer makeEnemyRed;
     [SerializeField] private Material[] materialForEnemy;
 
-<<<<<<< HEAD
+
     [Range(0.01f, 15.0f)]
     public float EnemySpeed;
     private bool forCreatingState;
 
 
+
     void Start()
     {
-=======
-    [Range(0.01f,0.1f)]
-    public float EnemySpeed;
-    private bool forCreatingState;
-     
 
-    void Start () {
->>>>>>> 889947a8acc74e019157904238283f5a64d0279e
 
         orginalPosition = transform.position;
         makeEnemyRed = GetComponent<Renderer>();
         makeEnemyRed.enabled = true;
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 889947a8acc74e019157904238283f5a64d0279e
+
         makeEnemyRed.sharedMaterial = materialForEnemy[0];
     }
 
     void Update()
     {
-<<<<<<< HEAD
+
         if (transform.position == orginalPosition)
         {
 
@@ -132,12 +118,8 @@ public class EnemyBehavior : MonoBehaviour {
             makeEnemyRed.sharedMaterial = materialForEnemy[0];
         }
     }
-<<<<<<< HEAD
+
+
     */
 
 }
-=======
-
-
-}
->>>>>>> 889947a8acc74e019157904238283f5a64d0279e

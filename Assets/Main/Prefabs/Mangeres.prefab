@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1238122567885454
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1973717249654988
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506031167272932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0648613, y: 2.8592436, z: 50}
+  m_LocalPosition: {x: -35.41486, y: 5.259244, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4228043658878556}
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: rotating
-    clip: {fileID: 8300000, guid: 3dccdc79d3d4c534983750badb60428b, type: 3}
+    clip: {fileID: 0}
     pitch: 1
     reverb: 0
     volume: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: normalObstacle
-    clip: {fileID: 8300000, guid: 545648475173d7542ac3d42e902636ed, type: 3}
+    clip: {fileID: 8300000, guid: 32a687ed3e1706e45b635627bdd3997a, type: 3}
     pitch: 1.54
     reverb: 0
     volume: 0.29
@@ -992,7 +992,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: 0
-    clip: {fileID: 8300000, guid: ad85ade62e7c8f8429da224a9b2abe19, type: 3}
+    clip: {fileID: 0}
     pitch: 1
     reverb: 0
     volume: 0.2
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: shoot
-    clip: {fileID: 8300000, guid: e114b37886acc764d8f166ed05cf37e7, type: 3}
+    clip: {fileID: 8300000, guid: edeed431a931e8f43913d9cddf12c76b, type: 3}
     pitch: 0.9
     reverb: 0
     volume: 0.2
