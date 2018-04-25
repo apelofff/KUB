@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FieldOfViewA : MonoBehaviour
+public class FieldOfView : MonoBehaviour
 {
     public float viewRadius;
     [Range(0, 360)]
@@ -44,14 +44,14 @@ public class FieldOfViewA : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstiaclMask))
                 {
                     // Enable Enemy Behavior
-<<<<<<< HEAD
+
 
                     EnemyBehavior.ISTargetInRange = true;
                     visableTargets.Add(target);
-=======
+
                     EnemyBehavior.ISTargetInRange = true; 
                     visableTargets.Add (target);
->>>>>>> 889947a8acc74e019157904238283f5a64d0279e
+
                 }
             }
         }

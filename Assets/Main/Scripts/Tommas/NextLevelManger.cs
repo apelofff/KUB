@@ -15,6 +15,7 @@ public class NextLevelManger : MonoBehaviour
 
         if (other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("nextMap");
             SceneManager.LoadScene(levelToLoad);
 
             //TimeScore.IsTimerOn = true;   
