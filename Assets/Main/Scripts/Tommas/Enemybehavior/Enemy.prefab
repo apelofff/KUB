@@ -99,7 +99,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65327704980758180
 BoxCollider:
@@ -124,6 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd76a747a64afc740b5800568c23157a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewRadius: 0
+  viewAngel: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstiaclMask:
+    serializedVersion: 2
+    m_Bits: 0
+  visableTargets: []
 --- !u!114 &114756413957434812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,3 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5364f60962d01b24b90e4c4d72d78b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTarget: {fileID: 0}
+  makeEnemyRed: {fileID: 0}
+  materialForEnemy: []
+  EnemySpeed: 0
