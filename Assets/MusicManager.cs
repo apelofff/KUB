@@ -14,7 +14,7 @@ public class MusicManager : MonoBehaviour {
     public int currentScene2;
     public AudioSource[] audioClip;
     private States myState;
-    private enum States { s_Level_Start, s_Level_1, s_Level_2, s_Level_3, s_Level_4, s_Level_5, s_Level_6, s_Level_7, s_Level_8, s_Level_9, s_Level_10 }
+    private enum States { s_Level_Start, s_Level_1, s_Level_2, s_Level_3, s_Level_4, s_Level_5, s_Level_6, s_Level_7, s_Level_8, s_Level_9, s_Level_10, }
     public float delta;
     public float lastFrameTime;
     public float delay;
@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour {
 
 
 
-/*
+
     private void Update()
     {
         delta = Time.timeSinceLevelLoad - lastFrameTime;
@@ -53,68 +53,179 @@ public class MusicManager : MonoBehaviour {
     {
         audioClip[currentScene2].Play();
     }
-    
-    private void State_Level_10()
+
+
+    private void State_Level10()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
-        Play();
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 10)
+            {
+                myState = States.s_Level_10;
+
+            }
+            else if (currentScene2 == 10)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
+
 
     private void State_Level9()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 9)
+            {
+                myState = States.s_Level_10;
+
+            }
+            else if (currentScene2 == 9)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
+
 
     private void State_Level8()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 8)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 8)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
 
     private void State_Level7()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 8)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 8)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
 
     private void State_Level6()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 7)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 7)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
+
 
     private void State_Level5()
     {
-        MusicTimer = audioClip[currentScene2].clip.length;
         audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
+        {
+            if (currentScene2 > 6)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 6)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
+        }
     }
+
 
     private void State_Level4()
     {
-        if (audioClip[currentScene2 - 1].loop == false)
+        audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
+        if (MusicTimer <= 0)
         {
-            MusicTimer = audioClip[currentScene2].clip.length;
-        }
-        else if (currentScene2 == 4)
-        {
-            myState = States.s_Level_4;
-            audioClip[currentScene2-1].loop = false;
+            if (currentScene2 > 5)
+            {
+                myState = States.s_Level_4;
+
+            }
+            else if (currentScene2 == 5)
+            {
+                audioClip[currentScene2 - 1].loop = false;
+                MusicTimer = audioClip[currentScene2].clip.length;
+                Play();
+
+            }
         }
     }
 
     private void State_Level3()
     {
-
+        audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+    
         if (MusicTimer <= 0)
         {
-            if (currentScene2 > 3)
+            if (currentScene2 > 4)
             {
                 myState = States.s_Level_4;
 
             }
-            else if (currentScene2 == 3)
+            else if (currentScene2 == 4)
             {
                 audioClip[currentScene2 - 1].loop = false;
                 MusicTimer = audioClip[currentScene2].clip.length;
@@ -126,17 +237,19 @@ public class MusicManager : MonoBehaviour {
 
     private void State_Level2()
     {
-        
+        audioClip[currentScene2 - 1].loop = false;
+        audioClip[currentScene2 - 2].loop = false;
+
         if (MusicTimer <= 0)
         {
-            if (currentScene2 > 2)
+            if (currentScene2 > 3)
             {
                 myState = States.s_Level_3;
 
             }
-            else if(currentScene2 == 2)
+            else if(currentScene2 == 3)
             {
-                audioClip[currentScene2 - 1].loop = false;
+
                 MusicTimer = audioClip[currentScene2].clip.length;
                 Play();
 
@@ -151,15 +264,16 @@ public class MusicManager : MonoBehaviour {
         if (MusicTimer <= 0)
         {
             
-            if (currentScene2 > 1)
+            if (currentScene2 > 2)
             {
-
                 myState = States.s_Level_2;
+                audioClip[currentScene2 - 1].loop = false;
+                audioClip[currentScene2 - 2].loop = false;
             }
 
-            if (currentScene2 == 1)
+            if (currentScene2 == 2)
             {
-                audioClip[currentScene2 - 1].loop = false;
+
                 MusicTimer = audioClip[currentScene2].clip.length;
                 Play();
             }
@@ -170,22 +284,20 @@ public class MusicManager : MonoBehaviour {
     {
         if(MusicTimer <= 0)
         {
-            if (currentScene2 > 0)
+            if (currentScene2 > 1)
             {
                 audioClip[currentScene2 - 1].loop = false;
                 myState = States.s_Level_1;
             }
 
-            if (currentScene2 == 0)
+            if (currentScene2 == 1)
             {
                 numberOfDifferentSongs = numberOfDifferentSongs + 1;
                 MusicTimer = audioClip[currentScene2].clip.length;
                 Play();
             }
-
         }
     }
-    */
 
     //CheckSoundsToPlay();
 

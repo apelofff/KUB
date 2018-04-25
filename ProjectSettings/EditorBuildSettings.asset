@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Main/Scenes/Menu/MainMenu.unity
+    guid: cdf9c6ad9ebc4fb4c96ae8c4a24a025c
+  - enabled: 1
     path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/DOJO/1.unity
     guid: b58685301d8557e459f43aff56052374
   - enabled: 1
@@ -15,17 +18,21 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/DOJO/3.unity
     guid: 66c77c5c333cc2040949792c9eaabc8c
   - enabled: 1
-    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/5.unity
-    guid: 60c3e063bd82b7c40b5c3bc7c5ad0ea4
+    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/FACILITY/Facility Level.unity
+    guid: b5ca1e59cfff4664baf5d6b96dbd44bf
   - enabled: 1
-    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/7.unity
-    guid: 3e47ce8daace01849a8fc6685e8f71b0
-  - enabled: 0
-    path: Assets/Main/Scenes/Menu/MainMenu.unity
-    guid: cdf9c6ad9ebc4fb4c96ae8c4a24a025c
-  - enabled: 0
+    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/FACILITY/Testing Facility Portal
+      Introduction.unity
+    guid: 08c9b78dea1bbde4ab29445c56f371ac
+  - enabled: 1
     path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/4.unity
     guid: f9e34fd5a00f2cd4d887822ca76c3e08
+  - enabled: 0
+    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/5.unity
+    guid: 60c3e063bd82b7c40b5c3bc7c5ad0ea4
+  - enabled: 0
+    path: Assets/Main/Scenes/FERDIGE - RDY FOR ART/MOUNTAIN 1/7.unity
+    guid: 3e47ce8daace01849a8fc6685e8f71b0
   - enabled: 0
     path: Assets/Main/Scenes/TutorialLevels/TutorialLevel1.unity
     guid: ccddce49aa0eb1f46b66134ecc019057
