@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1042049811459910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54, y: 0.11, z: 3}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.015204529, y: 0.015204529, z: 0.015204529}
   m_Children: []
   m_Father: {fileID: 4038820070766670}
@@ -159,11 +159,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1042049811459910}
-  m_Text: 'Game Over!
-
-    ("Press space to try again!")'
+  m_Text: Tuch To Retry
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 20
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
