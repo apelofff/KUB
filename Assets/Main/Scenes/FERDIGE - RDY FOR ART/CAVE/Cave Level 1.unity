@@ -23008,6 +23008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b029e08db38c34bafdb127dd5afed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   portal1: {fileID: 0}
   portal2: {fileID: 0}
   portal3: {fileID: 0}
@@ -24478,7 +24479,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1277932
+  m_Name: pb_Mesh33740
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PortalManager : MonoBehaviour
 {
+    public PlayerControllers playerScript;
+    private TrailRenderer lr;
+    public GameObject player;
     public Transform portal1;
     public Transform portal2;
     public Transform portal3;
@@ -15,11 +18,19 @@ public class PortalManager : MonoBehaviour
     public Transform portal8;
     public bool isInTrigger;
 
+    private void Start()
+    {
+        playerScript = player.GetComponent<PlayerControllers>();
+        lr = player.GetComponent<TrailRenderer>();
+   }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "portal_1")
         {
+            lr.enabled = false;
             transform.position = portal2.transform.position;
+
         }
         if (other.tag == "portal_3")
         {
@@ -34,4 +45,12 @@ public class PortalManager : MonoBehaviour
             transform.position = portal8.transform.position;
         }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "portal_2" || other.tag == "portal_4") 
+        lr.enabled = true;
+    }
+
 }
+
