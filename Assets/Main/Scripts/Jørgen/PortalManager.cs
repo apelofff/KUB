@@ -17,6 +17,7 @@ public class PortalManager : MonoBehaviour
     public Transform portal7;
     public Transform portal8;
     public bool isInTrigger;
+    public bool changeMaterial;
 
     private void Start()
     {
@@ -28,9 +29,7 @@ public class PortalManager : MonoBehaviour
     {
         if (other.tag == "portal_1")
         {
-            lr.enabled = false;
             transform.position = portal2.transform.position;
-
         }
         if (other.tag == "portal_3")
         {
@@ -44,12 +43,6 @@ public class PortalManager : MonoBehaviour
         {
             transform.position = portal8.transform.position;
         }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "portal_2" || other.tag == "portal_4") 
-        lr.enabled = true;
     }
 
 }

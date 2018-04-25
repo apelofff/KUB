@@ -2637,6 +2637,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1634251880030830, guid: e466857bbfbabc14a89a62b5afc51798,
     type: 2}
   m_PrefabInternal: {fileID: 2018648083}
+--- !u!114 &573319282 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114097783334758856, guid: e466857bbfbabc14a89a62b5afc51798,
+    type: 2}
+  m_PrefabInternal: {fileID: 2018648083}
+  m_Script: {fileID: 11500000, guid: 4f0dd9a0490c56f41bd1ccd25623a681, type: 3}
 --- !u!114 &573319286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,10 +2654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b029e08db38c34bafdb127dd5afed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
-  player: {fileID: 0}
-  portal1: {fileID: 870464532}
-  portal2: {fileID: 517597392}
+  playerScript: {fileID: 573319282}
+  player: {fileID: 573319277}
+  portal1: {fileID: 517597392}
+  portal2: {fileID: 870464532}
   portal3: {fileID: 0}
   portal4: {fileID: 0}
   portal5: {fileID: 0}
@@ -2712,6 +2718,10 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211243872085520, guid: 9798bba65483dfa499a26a4c496f8ca8, type: 2}
+      propertyPath: m_Name
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9798bba65483dfa499a26a4c496f8ca8, type: 2}
@@ -13003,11 +13013,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 129.8
+      value: 282.1
       objectReference: {fileID: 0}
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 44.8
       objectReference: {fileID: 0}
     - target: {fileID: 4717432996769306, guid: e466857bbfbabc14a89a62b5afc51798, type: 2}
       propertyPath: m_LocalPosition.z
