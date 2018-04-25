@@ -13,13 +13,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     // Use this for initialization
 
-    private MusicManager musicManager;
-
-    private void Start()
-    {
-        musicManager = GetComponent<MusicManager>();
-        
-    }
     void Awake()
     {
         if (instance == null)
