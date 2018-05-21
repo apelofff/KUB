@@ -44,6 +44,16 @@ public class PortalManager : MonoBehaviour
             transform.position = portal8.transform.position;
         }
     }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "portal_2" || other.tag == "portal_4")
+            StartCoroutine(WaitOneSecond());
+    }
 
+    public IEnumerator WaitOneSecond()
+    {
+        yield return new WaitForSeconds(1);
+        lr.enabled = true;
+    }
 }
 
