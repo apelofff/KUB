@@ -126,12 +126,13 @@ public class PlayerControllers : MonoBehaviour {
             {
                 RotationOposite = false;
             }*/
-
+            /*
             if (resetLevel == true && Input.GetButtonDown("Jump"))
             {
             EnemyBehavior.ISTargetInRange = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+        */
 
 
             if (ThisRB.isKinematic == true && StopMotion == true && ID == 1 && RotationOposite == true)

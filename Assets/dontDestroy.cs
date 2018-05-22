@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class dontDestroy : MonoBehaviour {
 
-    MusicManager _MusicManager;
+    private MusicManager _MusicManager;
 
     private static dontDestroy instance;
     public void Start()
     {
-         _MusicManager = GameObject.Find("GameManager").GetComponent<MusicManager>();
+         //_MusicManager = GameObject.Find("GameManager").GetComponent<MusicManager>();
     }
     // Use this for initialization
     void Awake ()
