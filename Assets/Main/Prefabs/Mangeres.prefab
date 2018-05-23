@@ -406,7 +406,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -646,7 +646,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -726,7 +726,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1006,8 +1006,8 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: shoot
-    clip: {fileID: 8300000, guid: edeed431a931e8f43913d9cddf12c76b, type: 3}
-    pitch: 0.9
+    clip: {fileID: 8300000, guid: 10bcc8721b8f5c14cbb11b2fa45610f6, type: 3}
+    pitch: 1.93
     reverb: 0
     volume: 0.2
     source: {fileID: 0}
