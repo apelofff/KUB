@@ -36,7 +36,6 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.reverbZoneMix = s.reverb;
             s.loop = false;
-            
         }
     }
 
