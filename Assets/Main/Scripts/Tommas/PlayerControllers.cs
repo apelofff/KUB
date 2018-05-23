@@ -154,6 +154,13 @@ public class PlayerControllers : MonoBehaviour {
             // if (Input.GetButton("Jump"))
             //Zoom(); //Kameraet zoomer
             //  }
+
+        if(resetLevel == true && Input.GetButtonDown("Jump"))
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+        }
         }
 
     /* private void Zoom()
@@ -164,7 +171,7 @@ public class PlayerControllers : MonoBehaviour {
          StopAllCoroutines();
      }*/
 
-
+ 
    
     public void OnTriggerEnter(Collider other)
     {
