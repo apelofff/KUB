@@ -8,31 +8,21 @@ public class SaveFile : MonoBehaviour {
     public static int HighestUnlockedLevel = 1; 
 
     public  GameObject[] LevelLoadButtons;
-    private int ArrayofLevels; 
+    private int index;
     
-    void Update () {
 
-        Debug.Log(HighestUnlockedLevel);
-        for (int i = HighestUnlockedLevel + 1; i<LevelLoadButtons.Length; i++)
-        {
-           
-            LevelLoadButtons[i].SetActive(false); 
-        }
-    }
-    void LevelSelect(int index)
+    // make a dont destroy manger script that runns thrueout the whole game, that also stores data 
+    // Get the data when when you load the scene in awake function set desierd = to stored data 
+
+    private void Start()
     {
-        if (HighestUnlockedLevel == index)
-        {
-            SceneManager.LoadScene(index);
-        }
+        index = TheUltimateScript.desiredSave; 
     }
-    void UnlockedLevels()
-    {
-        
-        ArrayofLevels = HighestUnlockedLevel - 1;
-        LevelLoadButtons[ArrayofLevels].SetActive(false);
-        
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.V))
+        SceneManager.LoadScene(index);
     }
+  
 
     
 
