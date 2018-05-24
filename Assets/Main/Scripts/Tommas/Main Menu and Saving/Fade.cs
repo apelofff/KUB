@@ -29,7 +29,7 @@ public class Fade : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // fading
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Fades(true, 1.00f);
 
