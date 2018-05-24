@@ -17,8 +17,7 @@ public class NextLevelManger : MonoBehaviour
         if (other.tag == "Player")
         {
             TheUltimateScript.saveInt++;
-            TheUltimateScript.SetSave();
-            TheUltimateScript.startCourtine = true; 
+            TheUltimateScript.SetSave();        
         }
     }
 }
