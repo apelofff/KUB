@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e30711f75d6856a44ba4e0c81e72ae2b
+timeCreated: 1485893835
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gravityFont: {fileID: 12800000, guid: 28ed1153d48f34485be1063881729e18, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
