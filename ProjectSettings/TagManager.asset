@@ -22,6 +22,7 @@ TagManager:
   - portal_6
   - portal_7
   - portal_8
+  - Fade
   layers:
   - Default
   - TransparentFX

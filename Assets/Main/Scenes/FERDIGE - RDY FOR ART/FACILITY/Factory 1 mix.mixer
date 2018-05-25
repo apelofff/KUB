@@ -15,7 +15,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters: []
-  m_AudioMixerGroupViews: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 5904172de195dc0428c2f62213ede02a
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -31,6 +34,7 @@ AudioMixerGroupController:
   m_Pitch: 06ddc4ca20d22ab44a2f613c7d8dc359
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: 244455342574550802}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -56,5 +60,46 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 11a6bfa4b4bf77e488a8dd2532a1629a
-  m_FloatValues: {}
+  m_FloatValues:
+    a702c55053e75ae4bb951043768b251c: 10107
+    fe7113e172139bd4882432a27d445ee9: -1492
+    931f1bb29bf09e8418b8eff069db0afb: 1.81
+    352c2cf44e5929e4cb25ef93995df57f: 0.0774
+    2cb422e59810185409ffc4e57d0f0583: 0.06
+    45d83e07acd0c4d47b27fa62e1f464ba: -7326
+    2d24e96738401b5429e6be0af03cd9c6: 542
+    baefc13859d7d6348abd514442f71ef6: 11
+    0010f248a39637b48877a9f259ffa5ec: 0.799
+    6052cfb96568a054c883a37b270f2813: 1.51
+    d610b83afeefdcf418548c939bf48db1: 0.412
+    a451b99a6c074e3449eb9f4c7fc84ce4: 0.878
+    06ddc4ca20d22ab44a2f613c7d8dc359: 1
+    2d77fa5b44e76c44188bbd5afa055b69: 0.228
+    3a075b8b1f1e4224aa82bcbb674f9e74: 13.88
+    c78aababad4e6d543ba7ca2634fae58e: 0.059
+    d6151debc0bb7f34087365fdc0a445cc: -10.5
+    888dbd7d6f17d0642abdb0964d3c1704: 28
+    c788ed0f08619864e88a4133f3d48c53: -2034
+    cb1e07bf078bec84398f666040b907f6: 0
   m_TransitionOverrides: {}
+--- !u!244 &244455342574550802
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8d2871d3dd2be124290ac0c44ae10651
+  m_EffectName: Pitch Shifter
+  m_MixLevel: 0ec8b2ab9bb6dd34a94b95d407b6cb48
+  m_Parameters:
+  - m_ParameterName: Pitch
+    m_GUID: 0010f248a39637b48877a9f259ffa5ec
+  - m_ParameterName: FFT size
+    m_GUID: 35d146741732ff44ba35fdc68da1312c
+  - m_ParameterName: Overlap
+    m_GUID: baefc13859d7d6348abd514442f71ef6
+  - m_ParameterName: Max channels
+    m_GUID: 266e0f43d9d02ca468fa0c2e4812deca
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

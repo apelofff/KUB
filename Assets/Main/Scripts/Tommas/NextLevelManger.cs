@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 //[RequireComponent(typeof(T_HighScoreSystem))]
 public class NextLevelManger : MonoBehaviour
 {
-    public int levelToLoad = 1;
-    private TheUltimateScript input; 
+    public int levelToLoad;
+
+    private TheUltimateScript input;
 
     //public T_HighScoreSystem TimeScore;
 
@@ -18,7 +19,12 @@ public class NextLevelManger : MonoBehaviour
         {
             TheUltimateScript.saveInt++;
             TheUltimateScript.SetSave();
-            TheUltimateScript.startCourtine = true; 
+            Fade.FadeId = 1;
+            Invoke("LoadNextScene", 1f); 
         }
+    }
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(levelToLoad);
     }
 }

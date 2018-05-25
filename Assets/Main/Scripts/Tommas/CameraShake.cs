@@ -10,7 +10,7 @@ public class CameraShake : MonoBehaviour {
     public float duration = 0.1f;
     public Transform cameras;
     public float slowDownTime = 1.0f;
-    public bool shouldShake = false;
+    public static bool shouldShake = false;
 
     Vector3 startingPostion;
     public float intialDuration;
@@ -47,10 +47,7 @@ public class CameraShake : MonoBehaviour {
         if (shouldShake)
         {
             Shaking();
-            if (Input.GetButtonDown("Jump"))
-            {
-                Zooming();
-            }
+           
         } 
 	}
 
