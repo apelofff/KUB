@@ -8,3 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/ABSOLUTE/1Tutorial/Tutorial1.unity
     guid: 3fd91a29cf9548f469f3a1ccb7ef36a3
+  - enabled: 1
+    path: Assets/Main/Scenes/ABSOLUTE/1Tutorial/Tutorial2.unity
+    guid: 4b095ace37136ac41b7986894535a84e
+  - enabled: 1
+    path: Assets/Main/Scenes/ABSOLUTE/1Tutorial/Tutorial3.unity
+    guid: e0d09c61de97ffb4bb6bb053c1e056cb
