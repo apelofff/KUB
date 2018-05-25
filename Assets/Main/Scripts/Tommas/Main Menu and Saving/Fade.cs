@@ -12,6 +12,7 @@ public class Fade : MonoBehaviour {
     private bool IsShowing;
     private float duration;
     public static bool startCourtine = false;
+    public static  int FadeId = 0; 
 
     // Use this for initialization
     void Awake () {
@@ -26,18 +27,31 @@ public class Fade : MonoBehaviour {
         this.duration = duration;
         transtion = (IsShowing) ? 0 : 1;
     }
+    IEnumerator FadeInNewLevel()
+    {
+        yield return new WaitForSeconds(2f);
+        Fades(false, 3.5f);
+            
+    }
     // Update is called once per frame
     void Update () {
         // fading
         if (Input.GetKeyDown(KeyCode.B))
-        {
-            Fades(true, 1.00f);
+            FadeId = 1; 
 
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
+        if (FadeId == 1)
         {
-            Fades(false, 3.5f);
+            Fades(true, 0.4f);
+            FadeId = 2; 
         }
+        else if (FadeId == 2)
+        {
+
+            StartCoroutine(FadeInNewLevel());
+            StopCoroutine(FadeInNewLevel());
+            FadeId = 0;
+        }
+       
 
         if (!isInTranstion)
             return;
@@ -50,4 +64,5 @@ public class Fade : MonoBehaviour {
 
     
     }
+    
 }

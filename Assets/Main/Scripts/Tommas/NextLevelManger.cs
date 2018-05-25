@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class NextLevelManger : MonoBehaviour
 {
     public int levelToLoad = 1;
+   
     private TheUltimateScript input; 
 
     //public T_HighScoreSystem TimeScore;
@@ -17,7 +18,8 @@ public class NextLevelManger : MonoBehaviour
         if (other.tag == "Player")
         {
             TheUltimateScript.saveInt++;
-            TheUltimateScript.SetSave();        
+            TheUltimateScript.SetSave();
+            Fade.FadeId = 1; 
         }
     }
 }
