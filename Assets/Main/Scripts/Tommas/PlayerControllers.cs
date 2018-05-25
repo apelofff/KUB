@@ -155,9 +155,9 @@ public class PlayerControllers : MonoBehaviour {
             //Zoom(); //Kameraet zoomer
             //  }
 
-        if(resetLevel == true && Input.GetButtonDown("Jump"))
+        if(resetLevel == true )
         {
-
+            CameraShake.shouldShake = true; 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
@@ -187,8 +187,8 @@ public class PlayerControllers : MonoBehaviour {
 
         if(other.tag == "Dead")
         {
-            TimeScore.OnDeath();
-            cameraShake.shouldShake = true;
+            //TimeScore.OnDeath();
+            //cameraShake.shouldShake = true;
             StopMotion = false; 
             ThisRB.isKinematic = true;
             FindObjectOfType<AudioManager>().Play("normalObstacle");
