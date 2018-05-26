@@ -25,13 +25,24 @@ public class TheUltimateScript : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        Debug.Log(saveInt); 
-     
+        Debug.Log(saveInt);
+           
     }
 
     public static void SetSave()
     {
         PlayerPrefs.SetInt("SaveInt", saveInt); 
+    }
+
+    public void OnLevelSelect(int index)
+    {
+        if (index >= saveInt)
+        {
+            SceneManager.LoadScene(index); 
+        } else if (index != saveInt)
+        {
+            CameraShake.shouldShake = true; 
+        }
     }
     
 

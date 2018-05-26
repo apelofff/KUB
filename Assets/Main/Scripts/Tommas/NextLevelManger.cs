@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 
 //[RequireComponent(typeof(T_HighScoreSystem))]
 public class NextLevelManger : MonoBehaviour
 {
     public int levelToLoad;
-
+    public Text CurrentLevel; 
     private TheUltimateScript input;
 
     //public T_HighScoreSystem TimeScore;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,11 +22,12 @@ public class NextLevelManger : MonoBehaviour
             TheUltimateScript.saveInt++;
             TheUltimateScript.SetSave();
             Fade.FadeId = 1;
-            Invoke("LoadNextScene", 1f); 
+            Invoke("LoadNextScene",0.1f); 
         }
     }
     private void LoadNextScene()
     {
         SceneManager.LoadScene(levelToLoad);
     }
+ 
 }

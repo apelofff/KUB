@@ -18,7 +18,10 @@ public class Fade : MonoBehaviour {
     void Awake () {
         Instance = this; 
 	}
-
+    private void Start()
+    {
+        Fades(false, 0.5f); 
+    }
     // fade function
     private void Fades(bool showing, float duration)
     {
@@ -29,8 +32,8 @@ public class Fade : MonoBehaviour {
     }
     IEnumerator FadeInNewLevel()
     {
-        yield return new WaitForSeconds(2f);
-        Fades(false, 3.5f);
+        yield return new WaitForSeconds(1f);
+        Fades(false, 0.5f);
             
     }
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class Fade : MonoBehaviour {
 
         if (FadeId == 1)
         {
-            Fades(true, 0.4f);
+            Fades(true, 0.1f);
             FadeId = 2; 
         }
         else if (FadeId == 2)

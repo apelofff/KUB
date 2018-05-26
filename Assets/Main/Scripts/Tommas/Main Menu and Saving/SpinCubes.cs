@@ -39,4 +39,8 @@ public class SpinCubes : MonoBehaviour {
         SceneManager.LoadScene("Tutorial1");
 
     }
+    public void ExitTheQb()
+    {
+        
+    }
 }
