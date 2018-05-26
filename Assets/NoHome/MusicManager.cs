@@ -1,354 +1,70 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-using System.Diagnostics;
+﻿using UnityEngine.Audio;
 using System;
-using UnityEngine.Animations;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
+public class MusicManager : MonoBehaviour
+{
 
-public class MusicManager : MonoBehaviour {
-    public float MusicTimer;
-    public int numberOfDifferentSongs;
-    public int currentScene2;
-    public AudioSource[] audioClip;
-    private States myState;
-    private enum States { s_Level_Start, s_Level_1, s_Level_2, s_Level_3, s_Level_4, s_Level_5, s_Level_6, s_Level_7, s_Level_8, s_Level_9, s_Level_10, }
-    public float delta;
-    public float lastFrameTime;
-    public float delay;
+    public AudioSource audio1;
+    private int currentScene;
+    public AudioClip[] audioClips;
+    public float volumeLoss = 0;
+    public float audioLossLenght;
+    public float audioGainLenght;
+    private float audioLevelSet;
+    public int[] levelsToTransition;
+    private bool isTransitioning;
 
-    public void Start()
+    public static MusicManager instance;
+    // Use this for initialization
+
+    void Awake()
     {
-        AudioSource[] audioClip = GetComponents<AudioSource>();
-        myState = States.s_Level_Start;
-    }
-
-
-
-
-    private void Update()
-    {
-        delta = Time.timeSinceLevelLoad - lastFrameTime;
-        lastFrameTime = Time.realtimeSinceStartup;
-
-        currentScene2 = (SceneManager.GetActiveScene().buildIndex + numberOfDifferentSongs);
-        MusicTimer = MusicTimer - Time.deltaTime;
-
-        print("My State is: " + myState);
-        if (MusicTimer <= 0)
+        if (instance == null)
+            instance = this;
+        else
         {
-            if      (myState == States.s_Level_Start) { State_Level0();  }
-            else if (myState == States.s_Level_1) { audioClip[currentScene2 - 1].loop = false; State_Level1();  }
-            else if (myState == States.s_Level_2) { audioClip[currentScene2 - 1].loop = false; State_Level2();  }
-            else if (myState == States.s_Level_3) { audioClip[currentScene2 - 1].loop = false; State_Level3(); }
-            else if (myState == States.s_Level_4) { audioClip[currentScene2 - 1].loop = false; State_Level4(); }
-            else if (myState == States.s_Level_5) { audioClip[currentScene2 - 1].loop = false; State_Level5(); }
+            return;
         }
-
-    }   
-
-    public void Play()
+    }
+    public void Update()
     {
-        audioClip[currentScene2].Play();
+        CheckIfReadyForTransition();
     }
 
-
-    private void State_Level10()
+    private void Start()
     {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
+        
+        audio1 = GetComponent<AudioSource>();
+        audioLevelSet = audio1.volume;
+    }
 
-        if (MusicTimer <= 0)
+    public void CheckIfReadyForTransition()
+    {
+        int y = SceneManager.GetActiveScene().buildIndex;
+        if (y > currentScene)
         {
-            if (currentScene2 > 10)
-            {
-                myState = States.s_Level_10;
+            currentScene = y;
+            isTransitioning = true;
 
-            }
-            else if (currentScene2 == 10)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
         }
     }
 
-
-    private void State_Level9()
+    public void Transition()
     {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 9)
-            {
-                myState = States.s_Level_10;
-
-            }
-            else if (currentScene2 == 9)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
+        isTransitioning = true;
+        audio1.volume = Mathf.Lerp(audio1.volume, volumeLoss, audioLossLenght);
+        StartCoroutine(WaitForFade1());
+        audio1.clip = audioClips[SceneManager.GetActiveScene().buildIndex];
+        audio1.volume = Mathf.Lerp(audio1.volume, audioLevelSet, audioGainLenght);
     }
 
-
-    private void State_Level8()
+    public IEnumerator WaitForFade1()
     {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 8)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 8)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
+        yield return new WaitForSeconds(audioLossLenght);
     }
-
-    private void State_Level7()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 8)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 8)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-    private void State_Level6()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 7)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 7)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-
-    private void State_Level5()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 6)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 6)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-
-    private void State_Level4()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 5)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 5)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-    private void State_Level3()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-    
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 4)
-            {
-                myState = States.s_Level_4;
-
-            }
-            else if (currentScene2 == 4)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-    private void State_Level2()
-    {
-        audioClip[currentScene2 - 1].loop = false;
-        audioClip[currentScene2 - 2].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            if (currentScene2 > 3)
-            {
-                myState = States.s_Level_3;
-
-            }
-            else if(currentScene2 == 3)
-            {
-
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-
-            }
-        }
-    }
-
-    private void State_Level1()
-    {
-        //audioClip[currentScene2 - 1].loop = false;
-
-        if (MusicTimer <= 0)
-        {
-            
-            if (currentScene2 > 2)
-            {
-                myState = States.s_Level_2;
-                audioClip[currentScene2 - 1].loop = false;
-                audioClip[currentScene2 - 2].loop = false;
-            }
-
-            if (currentScene2 == 2)
-            {
-
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-            }
-        }
-    }
-
-    private void State_Level0()
-    {
-        if(MusicTimer <= 0)
-        {
-            if (currentScene2 > 1)
-            {
-                audioClip[currentScene2 - 1].loop = false;
-                myState = States.s_Level_1;
-            }
-
-            if (currentScene2 == 1)
-            {
-                numberOfDifferentSongs = numberOfDifferentSongs + 1;
-                MusicTimer = audioClip[currentScene2].clip.length;
-                Play();
-            }
-        }
-    }
-
-    //CheckSoundsToPlay();
-
-
-
-
-        /* if (SceneManager.GetActiveScene().buildIndex == 4 && MusicTimer > 0)
-         {
-             MusicTimer = 8;
-         }
-
-         if (SceneManager.GetActiveScene().buildIndex == 5 && MusicTimer < 0)
-         {
-             MusicTimer = 8;
-         }
-
-         if (SceneManager.GetActiveScene().buildIndex == 6 && MusicTimer < 0)
-         {
-             MusicTimer = 8;
-         }
-         if (SceneManager.GetActiveScene().buildIndex == 7 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 8 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 9 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 10 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 11 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 12 && MusicTimer < 0)
-             MusicTimer = 8;
-         if (SceneManager.GetActiveScene().buildIndex == 13 && MusicTimer < 0)
-             MusicTimer = 8;*/
-
 }
-
-
-
-    /*
-        public void CheckSoundsToPlay()
-        {
-            if (numberOfDifferentSongs + SceneManager.GetActiveScene().buildIndex > SceneManager.GetActiveScene().buildIndex)
-            {
-
-                StartCoroutine(WaitForTimer());
-            }
-
-        }
-        */
-
-
-
 
