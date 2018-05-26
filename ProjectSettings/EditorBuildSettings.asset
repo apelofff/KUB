@@ -14,15 +14,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/ABSOLUTE/1Tutorial/Tutorial3.unity
     guid: e0d09c61de97ffb4bb6bb053c1e056cb
-  - enabled: 1
-    path: Assets/Main/Scenes/ABSOLUTE/2Cave/Cave Level 1.unity
-    guid: 4c84b79b79af31d4095987780e51a564
-  - enabled: 1
-    path: Assets/Main/Scenes/ABSOLUTE/3Factory/Facility Level.unity
-    guid: b5ca1e59cfff4664baf5d6b96dbd44bf
-  - enabled: 1
-    path: Assets/Main/Scenes/OBSOLETE/FERDIGE - RDY FOR ART/FACILITY/Factory1.unity
-    guid: 39fa8d885579b0446b6d28ec963347b4
-  - enabled: 1
-    path: Assets/Main/Scenes/OBSOLETE/FERDIGE - RDY FOR ART/FACILITY/Factory2.unity
-    guid: f8251c4766e953b4c9e62e56f4cdbb6c
