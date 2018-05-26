@@ -30,18 +30,22 @@ public class PortalManager : MonoBehaviour
         if (other.tag == "portal_1")
         {
             transform.position = portal2.transform.position;
+            FindObjectOfType<AudioManager>().Play("portal");
         }
         if (other.tag == "portal_3")
         {
             transform.position = portal4.transform.position;
+            FindObjectOfType<AudioManager>().Play("portal");
         }
         if (other.tag == "portal_5")
         {
             transform.position = portal6.transform.position;
+            FindObjectOfType<AudioManager>().Play("portal");
         }
         if (other.tag == "portal_7")
         {
             transform.position = portal8.transform.position;
+            FindObjectOfType<AudioManager>().Play("portal");
         }
     }
     public void OnTriggerExit(Collider other)

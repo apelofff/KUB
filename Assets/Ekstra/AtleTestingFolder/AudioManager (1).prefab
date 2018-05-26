@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1416972973601744}
+  m_IsPrefabParent: 1
+--- !u!1 &1416972973601744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4652071456477890}
+  - component: {fileID: 114462657611131032}
+  m_Layer: 0
+  m_Name: AudioManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4652071456477890
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416972973601744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.304817, y: 7.8549786, z: -58.659218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114462657611131032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416972973601744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c1a9c7d009cec469dad6bf97a7429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: shoot
+    clip: {fileID: 8300000, guid: 10bcc8721b8f5c14cbb11b2fa45610f6, type: 3}
+    pitch: 1.93
+    reverb: 0
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0
+  - name: nextMap
+    clip: {fileID: 8300000, guid: f339e6aa93024af45bf6544cfb07e84d, type: 3}
+    pitch: 1.23
+    reverb: 0
+    volume: 0.291
+    source: {fileID: 0}
+    loop: 0
+  - name: normalObstacle
+    clip: {fileID: 8300000, guid: 32a687ed3e1706e45b635627bdd3997a, type: 3}
+    pitch: 1.54
+    reverb: 0
+    volume: 0.29
+    source: {fileID: 0}
+    loop: 0
+  - name: gravity
+    clip: {fileID: 8300000, guid: d8f841a9393572347a095d1598505633, type: 3}
+    pitch: 1.01
+    reverb: 0
+    volume: 0.261
+    source: {fileID: 0}
+    loop: 0
+  - name: portal
+    clip: {fileID: 8300000, guid: 64bc1a201a258504c9868ae2d1d01d8b, type: 3}
+    pitch: 0.94
+    reverb: 0
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0
+  - name: 1
+    clip: {fileID: 0}
+    pitch: 1
+    reverb: 0
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0
+  - name: 3
+    clip: {fileID: 0}
+    pitch: 1.93
+    reverb: 0
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0

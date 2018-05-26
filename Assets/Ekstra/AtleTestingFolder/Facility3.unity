@@ -3075,61 +3075,6 @@ Prefab:
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 132140543}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[0].name
-      value: shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 10bcc8721b8f5c14cbb11b2fa45610f6, type: 3}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 1.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[6].name
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[4].name
-      value: portal
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 64bc1a201a258504c9868ae2d1d01d8b, type: 3}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 114358071195188268, guid: 9798bba65483dfa499a26a4c496f8ca8,
-        type: 2}
-      propertyPath: sounds.Array.data[4].loop
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9798bba65483dfa499a26a4c496f8ca8, type: 2}
   m_IsPrefabParent: 0
@@ -9042,7 +8987,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1eda8df186a7744bb1df3780de2b88f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.25
   m_Pitch: 1.24
   Loop: 0
   Mute: 0
@@ -10192,7 +10137,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh34900
+  m_Name: pb_Mesh50730
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
